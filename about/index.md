@@ -1,12 +1,12 @@
----
+ï»¿---
 title: About Me
 layout: page
 ---
 
-ÖĞ¿ÆÔºÄ³Ëù²©Ê¿ÉúÒ»Ã¶£¬¸÷·½Ãæ¶¼ÔÚ½¨ÉèÖĞ¡­
+ä¸­ç§‘é™¢åœ¨è¯»åšå£«ä¸€æšï¼Œå„æ–¹é¢éƒ½åœ¨å»ºè®¾ä¸­â€¦â€¦
 
-- [Yihui's blog](http://yihui.name): ²©¿Í´ÓÕâÀï³­µÄ
+- [Yihui's blog](http://yihui.name): åšå®¢é£æ ¼ä»è¿™é‡ŒæŠ„çš„
 
-- [Yufree](http://blog.sciencenet.cn/u/yufree): ¿ÆÑ§ÍøÖ÷Ò³
+- [Yufree](http://blog.sciencenet.cn/u/yufree): ç§‘å­¦ç½‘åšå®¢
 
-- [Photo](http://yufree.diandian.com/): °ëÆ¿´×ÉãÓ°
+- [Photo](http://yufree.diandian.com/): åŠç“¶é†‹æ‘„å½±
