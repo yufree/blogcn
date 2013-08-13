@@ -2,7 +2,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-    var disqus_shortname = 'yufree'; // required: replace example with your forum shortname
+    var disqus_shortname = 'Miao'; // required: replace example with your forum shortname
     var disqus_url = '{{ site.baseurl }}{{ page.url | remove:'index.html' }}';
     /* * * DON'T EDIT BELOW THIS LINE * * */
     (function() {
