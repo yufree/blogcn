@@ -1,4 +1,4 @@
-﻿---
+---
 title: Don't Panic
 layout: page
 ---
