@@ -1,9 +1,6 @@
 ---
 layout: post
-title: Some Tips About Statistics I
+title: 准备搬运
 ---
 
-Recently, I read Part I of Song S. Qian's book - *Environmental and Ecological Statistics with R* and find some interesting tips about statistics in envrionmental science. Here I will choose some to share and I will share another post when I finish the next part
-
-
-fhyhdlkjfklajdkfjlkadjf
+想来想去还是对科学网可定制性太差的模版无法忍受，就对照有点长毛的英文博客模版建了个中文版的。文章搬家近期内会搞定，不会全搬，挑有意思的转移，关于里面已经说清楚了，摄影在点点，读书笔记在blogger，中英文吐槽估计以后都放到github pages了，科学网还会继续更新。
