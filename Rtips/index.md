@@ -38,7 +38,13 @@ power.t.test(power = .90, delta = 1,sig.level = 0.05) # delta表示你想看到�
 
 ----
 
-## 使用knitr包rmd文档如何得到图片与文字的混排的html5幻灯片？
+## 图文混排幻灯片
+
+### 问题描述
+
+使用knitr包rmd文档如何得到图片与文字的混排的html5幻灯片，beamer略显复杂，markdown似乎过于简单
+
+### 问题解决
 
 markdown语法相对简单，输出幻灯片中结构的调整最好直接修改html文件来调整，或者你可以考虑pandoc中对markdown语法的扩展，利用表格并将图片与文字放到两个单元格中来实现间接的混排。
 
