@@ -1,4 +1,4 @@
-﻿baseurl: "http://yufree.github.io/blogcn"
-markdown: rdiscount
+baseurl: "http://yufree.github.io/blogcn"
+markdown: kramdown
 author: yufree
 pygments: true
