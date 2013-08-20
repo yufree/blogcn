@@ -54,6 +54,7 @@ markdown语法相对简单，输出幻灯片中结构的调整最好直接修改
 
 - `data()` 查阅所有包中自带数据信息
 - `help(package="knitr")` 表示查阅名为knitr的包的基本信息及包中函数
+- `vignette("foo")` pdf版函数或包介绍，更为详细
 
 ----
 
