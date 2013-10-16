@@ -39,3 +39,7 @@ title: 常用工具
 
 手生了，但操作大体积文本只能指望它，曾经也是Emacs中org mode的粉，后来有了markdown，有了latex，有了knitr… 我是个懒货，只认最简单的
 
+# ubuntu
+
+又回来了
+
