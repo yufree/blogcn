@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title><a href="http://www.cambridgeincolour.com/tutorials.htm">数码相机教程笔记</a></title>
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+   white-space: pre-wrap;
+}
+
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code.r, code.cpp {
+   background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+
+
+
+
+</head>
+
+<body>
+<h1><a href="http://www.cambridgeincolour.com/tutorials.htm">数码相机教程笔记</a></h1>
+
+<h1>数码相机工作原理</h1>
+
+<h2>传感器</h2>
+
+<ul>
+<li>8位图像每个像素可存储0-255的数值代表明暗，0为black，255为white</li>
+<li>the Bayer array 红色：蓝色：绿色= 1：1：2 人眼对绿色更敏感 马赛克阵列</li>
+<li>去马赛克算法 田字格 损失分辨率 因此采用叠加复算 同一个色块被4个田字格重复使用 最边上的像素不要了</li>
+<li>摩尔纹 线条干涉 与阵列排布模式有关</li>
+<li>传感器阵列存在不感光区域与间隔区 用微棱镜引导间隔区的光</li>
+</ul>
+
+<h2>曝光三要素</h2>
+
+<ul>
+<li>光圈控景深
+
+<ul>
+<li>大光圈 浅景深 同一点进光过多 焦外背景模糊</li>
+<li>小光圈 深景深 小孔衍射模糊</li>
+<li>考虑拍摄主题</li>
+</ul></li>
+<li>快门控动态模糊
+
+<ul>
+<li>1-30+ 夜晚与低光环境</li>
+<li>2-&frac12; 流水 大景深景观</li>
+<li>&frac12;-1/30 移动物体的动态模糊 手持需稳定</li>
+<li>1/50-1/100 典型环境</li>
+<li>1/250-1/500 运动与动作 望远摄影</li>
+<li>1/1000-1/4000 凝固瞬间</li>
+</ul></li>
+<li>ISO控噪点
+
+<ul>
+<li>胶片50-200</li>
+<li>数码50-800</li>
+</ul></li>
+<li>曝光三角形 各要素副作用记好 组合效果保证曝光准确</li>
+<li>档位
+
+<ul>
+<li>auto 全自动</li>
+<li>p iso固定</li>
+<li>a 固定光圈ISO</li>
+<li>s 固定快门速度ISO</li>
+<li>m 全手动</li>
+<li>b 固定光圈 手控快门</li>
+<li>肖像 最大光圈 最小景深</li>
+<li>景观 最小光圈 最大景深</li>
+<li>运动 1/250或更小的快门速度 最大光圈 高iso</li>
+<li>夜晚 慢速快门 高速iso 前景闪光</li>
+</ul></li>
+<li>依赖相机测光</li>
+</ul>
+
+<h2>测光</h2>
+
+<ul>
+<li>反射光 白色总显示为18度灰</li>
+<li>白增黑减 
+-全白场景还原为18度灰 直方图正态化 增曝可显示白色 
+-暗色环境还原后偏亮 减曝可显示黑色</li>
+<li>曝光模式
+-点测光 平均测光
+-18度灰板测光
+-逆光肖像 特殊光源 用点测</li>
+<li>曝光演绎 正确区分光源 防止高光溢出 了解相机曝光失误</li>
+</ul>
+
+<h2>景深</h2>
+
+<ul>
+<li>前景后景均模糊</li>
+<li>模糊圈 用来确定景深 与传感器大小有关</li>
+<li>焦外成像区 模糊效果 不一定是圈 可能是5-8边形</li>
+<li>由光圈与对焦距离决定 大光圈小景深</li>
+<li>跟焦距没关系 
+
+<ul>
+<li>长焦望远放大 焦平面前后景深基本一致 视角小 焦外成像更模糊 使用主体突出特写 存在瞳孔放大效应</li>
+<li>广角贴近 焦平面前景深小 后景深大 适用于风景</li>
+</ul></li>
+<li>对焦深度 大光圈小深度 小光圈大深度 深度指传感器可移动的范围</li>
+</ul>
+
+<h2>镜头</h2>
+
+<ul>
+<li>镜头导致的问题包括低对比度 色差 光晕 变形 模糊</li>
+<li>焦距主要问题就是视角</li>
+<li>透视效果严格讲与焦距无关 只与站的位置有关 但实际随焦距变化
+
+<ul>
+<li>&lt;21mm 超广角 建筑摄影</li>
+<li>21-35mm 广角 风景</li>
+<li>35-70mm 正常 街道 纪实</li>
+<li>70-135mm 中度望远 肖像</li>
+<li>135-300+mm 望远 运动 鸟 野生动物</li>
+</ul></li>
+<li>焦距与手持摄影 长焦曝光时间短防止摇晃 安全快门与焦距（35mm）等同</li>
+<li>定焦与变焦 注意跟对焦的关系 一般最大光圈小一档或两档成像质量会好一些</li>
+</ul>
+
+<h2>白平衡</h2>
+
+<ul>
+<li>色温 不同温度下的光谱 高温偏低波长 低温偏高波长
+-1000-2000K 烛光
+-2500-3500K 白炽灯
+-3000-4000K 日出 日落
+-4000-5000K 荧光灯
+-5000-5500K 闪光灯
+-5000-6500K 晴天
+-6500-8000K 阴天
+-9000-10000K 阴影或阴霾天</li>
+<li>绿-品红转换 调整人工光源 营造特殊氛围</li>
+<li>使用RAW 通过参考物质还原场景</li>
+<li>自动白平衡判断的是光源光 如果拍摄物体本身偏暖或冷 背景物会偏冷或暖 就需要手动调节 自动白平衡在有白色物体的画面中更准确</li>
+<li>混合光下自动白平衡会分区对待 手动则为单一色调 可能失真</li>
+</ul>
+
+<h2>自动对焦</h2>
+
+<ul>
+<li>自动对焦传感器 检测对比度 可通过直方图理解 对比度最大对焦最锐
+
+<ul>
+<li>对焦系统轻微改变对焦距离</li>
+<li>读取传感器对比度看变化如何</li>
+<li>根据上步结果调整对焦距离</li>
+<li>重复上面步骤</li>
+</ul></li>
+<li>影响因素
+
+<ul>
+<li>光亮度</li>
+<li>物体对比度</li>
+<li>物体动态</li>
+<li>选择对比度强 低动态 高亮度的物体对焦</li>
+</ul></li>
+<li>对焦点
+
+<ul>
+<li>+表示二维对比度检测 更准 在中心</li>
+<li>-表示一维对比度检测</li>
+</ul></li>
+<li>自动对焦模式
+
+<ul>
+<li>连续对焦&amp;伺服对焦 移动物体对焦 耗电池</li>
+<li>一次对焦</li>
+<li>自动对焦辅助光 对比度小的静物比较适合</li>
+</ul></li>
+<li>对焦位置
+
+<ul>
+<li>人像对焦眼睛 对比度高</li>
+<li>偏离中心物体用中心对焦要偏后</li>
+<li>在条纹场景注意对焦方向</li>
+</ul></li>
+</ul>
+
+<h1>数码照片的品质</h1>
+
+<h2>数码存储</h2>
+
+<ul>
+<li>图片用像素存储 像素用RGB存储 RGB用01存储 8位00000000-11111111 256阶</li>
+<li>因为有三个通道 所以有2<sup>8*3</sup>种颜色 真彩色 32位多一个alpha灰度通道</li>
+<li>人眼可分辨1000w种颜色 24位图像可存储1600w颜色 但更多色阶有利于后期处理</li>
+<li>JPEG跟TIFF文件每个通道只能分别存8位与16位</li>
+</ul>
+
+<h2>锐利度</h2>
+
+<ul>
+<li>描述图像清晰度 由锐度与分辨率决定
+
+<ul>
+<li>锐度描述边缘清晰状况</li>
+<li>分辨率描述相邻单元的区分度 传感器决定</li>
+</ul></li>
+<li>锐度受颗粒度影响 低颗粒度更柔 高颗粒度更锐</li>
+<li>远近 稳定性均影响锐度</li>
+</ul>
+
+<h2>图像噪声</h2>
+
+<ul>
+<li>信噪比</li>
+<li>iso 高的噪音高</li>
+<li>类型
+
+<ul>
+<li>固定模式噪声 长曝光跟温度影响</li>
+<li>随机噪声 受高iso跟曝光时长影响</li>
+<li>波段噪声 受传感器影响 跟白平衡有关</li>
+</ul></li>
+<li>模式
+
+<ul>
+<li>黑色高白色低 胶片相反 </li>
+<li>曝光不足噪声高 过曝噪声低</li>
+</ul></li>
+<li>影响因素
+
+<ul>
+<li>颜色波动</li>
+<li>亮斑</li>
+</ul></li>
+<li>频率 高频噪点比低频更易接受 振幅也有影响 可通过RGB直方图标准偏差判断</li>
+<li>通道影响 Bayer排列
+-蓝通道噪音最高
+-绿通道噪音最低</li>
+<li>像素高底小噪音高 跟电子降噪技术也有关系</li>
+</ul>
+
+<h2>动态范围</h2>
+
+<ul>
+<li>最大最小的明暗范围</li>
+<li>强反射与不平衡的直射光场景需要较大的动态范围</li>
+<li>照度与亮度相关 光质决定</li>
+<li>感光元件决定单个像素的容忍度 更大的像素尺寸容忍度更高</li>
+<li>有些相机低ISO是通过抛弃高光部分实现的</li>
+<li>低ISO层次更强</li>
+<li>2的n次方表示几档的光变比</li>
+<li>相机 扫描仪 显示器 打印机的动态范围不一致 </li>
+<li>人眼24档的动态范围 相机6-8档左右 红色低蓝色高</li>
+<li>A/D转换 模拟信号转为数字信号 相机使用10-14位A/D转换信号 但一般就能转化出5-9档</li>
+<li>记录动态范围与展示动态范围是要去别对待的</li>
+</ul>
+
+<h1>高级概念</h1>
+
+<h2>传感器尺寸</h2>
+
+<ul>
+<li>尺寸
+
+<ul>
+<li>全画幅 35mm胶片尺寸</li>
+<li>中画幅</li>
+<li>大画幅</li>
+<li>APS-C </li>
+<li>43系统</li>
+</ul></li>
+<li>切割因子是对角线距离跟35mm对焦线的比值</li>
+<li>镜头的中心部分成像质量好 存在边缘模糊 越大光线使用率越高
+
+<ul>
+<li>传感器尺寸越大 相同视角焦距越小 越小越广角 边缘成像越差</li>
+<li>APS-C 23mm焦距相当于35mm 转换倍数1.5</li>
+<li>传感器越小 需要镜头越轻便</li>
+<li>传感器越大 镜头越沉 成像质量越好</li>
+</ul></li>
+<li>景深影响
+
+<ul>
+<li>传感器越大 景深越浅</li>
+<li>大传感器需要靠近且长焦 所以景深浅</li>
+<li>大传感器人像 虚化背景 因为降噪好 拍风景可考虑高ISO 小光圈</li>
+<li>小传感器风景 景深大</li>
+</ul></li>
+<li>干涉
+
+<ul>
+<li>大传感器小光圈干涉少</li>
+<li>干涉影响分辨率 锐度</li>
+</ul></li>
+<li>大传感器 像素尺寸大 噪点少 动态范围宽</li>
+<li>同样尺寸 同样噪点 噪点一般为高频  像素越多 高频影响越小 成像越干净</li>
+<li>生产上大块传感器质量要求更高 更贵</li>
+<li>有些镜头配特定传感器</li>
+<li>相同景深 大传感器分辨率不占优势</li>
+<li>同样敏感度 大传感器曝光时间更长</li>
+<li>像素越大 动态范围大 噪点低</li>
+</ul>
+
+<h2>干涉</h2>
+
+<ul>
+<li>艾里斑 2D干涉</li>
+<li>影响分辨率</li>
+<li>颜色影响 波长越小 干扰越小</li>
+<li>同样面积像素越多 干涉越大</li>
+<li>有些像素矩形 所以会向一个方向偏</li>
+<li>间隔中干涉要考虑微棱镜</li>
+<li>干涉并不总是圆形 有时5-8边形</li>
+<li>APS-C在F16会有明显干涉</li>
+<li>小光圈虽然有模糊 但可表现动态模糊与长曝光流水</li>
+<li>分辨率
+
+<ul>
+<li>绝对分辨率</li>
+<li>人眼分辨率</li>
+</ul></li>
+</ul>
+
+<h2>相机vs人眼</h2>
+
+<ul>
+<li>可视角度 40-60度 50mm标准镜头</li>
+<li>焦距对比
+
+<ul>
+<li>眼睛是曲面</li>
+<li>中间视场比边缘视场细节更多</li>
+</ul></li>
+<li>分辨率与细节
+
+<ul>
+<li>人眼60度 分辨率大概500w-1500w</li>
+<li>人眼识别特定模式 如脸 引起注意</li>
+<li>不对称 视线下方比上方更引起注意</li>
+<li>低光下眼睛识别单色 边缘更引起注意</li>
+<li>人眼在识别某些模式上放大后缺失 跟相机最大不同 反直觉</li>
+</ul></li>
+<li>敏感度与动态范围
+
+<ul>
+<li>人眼动态范围一般10-14档</li>
+<li>相机5-11档</li>
+<li>灵敏度人眼星空适应后晚上500-1000 白天1</li>
+<li>低光环境人眼灵敏度好一些</li>
+</ul></li>
+</ul>
+
+<h2>理解超焦距</h2>
+
+<ul>
+<li>在超焦距上对焦可获得从超焦距一半距离到无穷远都清晰的图片</li>
+<li>为了照顾前景中景与背景</li>
+<li>无穷远景深最近的一点</li>
+<li>跟光圈有关（景深）23mm F5.6 5m</li>
+<li>经验对焦在场景的1/3处</li>
+<li>超焦距要注意构图及主题</li>
+<li>注意相机的景深标尺</li>
+</ul>
+
+</body>
+
+</html>
+
