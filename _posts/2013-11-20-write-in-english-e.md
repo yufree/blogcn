@@ -70,6 +70,6 @@ title: 重温科技论文写作笔记（下）
 
 # 参考课程
 
-- c站：https://class.coursera.org/sciwrite-2012-001/class
-- e站：https://class.stanford.edu/courses/Medicine/SciWrite/Fall2013/about
-- AACC写作指南：http://www.aacc.org/publications/clin_chem/ccgsw/Pages/default.aspx
+- [c站](https://class.coursera.org/sciwrite-2012-001/class)
+- [e站](https://class.stanford.edu/courses/Medicine/SciWrite/Fall2013/about)
+- [AACC写作指南](http://www.aacc.org/publications/clin_chem/ccgsw/Pages/default.aspx)

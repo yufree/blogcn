@@ -13,7 +13,7 @@ title: 八卦一下“超标”
 
 该图出自扩展阅读最后一篇
 
-![alt text](http://yufree.github.io/blogcn/figure/toxic.jpg)
+![](http://yufree.github.io/blogcn/figure/toxic.jpg)
 
 但如大家所感觉的，这个观点似乎没什么人提（毕竟记者没必要都是科研一线呆过的 同时国内相关研究开展也很少）。个人感觉一方面这个观点在学术界是存在一定争议的；另一方面这种思路与一种臭名昭著的伪科学——顺势疗法（国内还没开始流行，不过市场很大）有点相似，学界持谨慎态度也是正常的。但多个独立的实验室都重复过类似的实验结果，这种现象是真实存在的。前面说的Edward Calabrese教授认为这是毒理学的一次revolution，并认为大多数外源物都有或多或少的Hormesis现象。
 
@@ -22,7 +22,8 @@ title: 八卦一下“超标”
 最后回到超标这个问题上，标准实际上是一种看似保守的保护性规章，实际并不见得完全可靠，但话说回来，没有标准，管理上会有极大的混乱。假以时日，如果能有一种设备，输入你的个人生物信息及相关环境参数就可以给出你对各种物质的个性化参考标准是最好不过了，当然，这需要对生命本质的透彻了解。
 
 以下为一些扩展阅读，上面不少地方的引文从下面找。
-- http://en.wikipedia.org/wiki/Hormesis 维基上过分强调了反对意见，事实上那篇反对文章本身没有多少影响力，但确实仍属于灰煮牛观点。
-- http://www.politicalbubbles.info/Sipping_From_a_Poisoned_Chalice.pdf science 03年曾报道过这一观点
-- http://works.bepress.com/edward_calabrese/ 该观点的教主Edward Calabrese教授得工作
-- http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1299203/ 教主的一篇论文 PMC应该是free的
+
+- [维基](http://en.wikipedia.org/wiki/Hormesis)上过分强调了反对意见，事实上那篇反对文章本身没有多少影响力，但确实仍属于灰煮牛观点。
+- [science](http://www.politicalbubbles.info/Sipping_From_a_Poisoned_Chalice.pdf) 03年曾报道过这一观点
+- 该观点的教主Edward Calabrese教授的[工作](http://works.bepress.com/edward_calabrese/)
+- 教主的一篇[论文](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC1299203/)

@@ -46,4 +46,4 @@ title: 如何写一篇坏论文
 
 上面十招可以让你的文章在可能的发表后迅速变成一张废纸，没有人会真正读懂里面的内容，但会有外行觉得你是个内行。
 
-全文链接 http://onlinelibrary.wiley.com/doi/10.1111/j.0030-1299.2007.15674.x/abstract
+[全文链接](http://onlinelibrary.wiley.com/doi/10.1111/j.0030-1299.2007.15674.x/abstract)
