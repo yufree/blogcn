@@ -14,3 +14,5 @@ layout: page
 - [读书笔记](https://yufreecas.blogspot.com/): 沥青下滴速更新
 
 - [英文版](http://yufree.github.io/blog/): 跟中文版区别很大
+
+- [知乎专栏](http://zhuanlan.zhihu.com/yufree): 土鳖的论文修养
