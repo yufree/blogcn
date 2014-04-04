@@ -171,3 +171,5 @@ Donald Knuth
 |- 垂直距离\vspace{length}
 
 |- 输入双引号`` '' 单引号`' 可得到英文引号
+
+|- `\sum\limits_{k=1}^n k^2` 使求和符号上下标真正出现在上下位
