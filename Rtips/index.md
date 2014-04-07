@@ -142,6 +142,15 @@ markdown语法相对简单，输出幻灯片中结构的调整最好直接修改
 
 fix(data)或者使用reshape包中的rename函数
 
+## 按变量提取数据框部分样本
+
+使用ddply来按变量提取并对提取出的数据取子集
+
+```
+library(plyr)
+ddply(x,.(a0),function(df) df[seq(min(5,nrow(df))),])
+```
+
 ----
 
 ## R中apply及其类似函数的区别与联系
