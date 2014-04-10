@@ -44,7 +44,7 @@ Data Science
   - echo will print whatever arguments you provide
   - date will print today's date
 - git
-```
+```{git}
 $ git config --global user.name "Your Name Here" # 输入用户名
 $ git config --global user.email "your_email@example.com" # 输入邮箱
 $ git config --list # 检查
@@ -104,10 +104,12 @@ $ exit # 退出
 
 ## 获得帮助
 
-```
+
+```r
 help()
-?command
+`?`(command)
 ```
+
 
 ## 数据类型及基本运算
 
@@ -126,9 +128,11 @@ help()
 - 对象可以用`names`命名
 - 变量名开头不能是数字和. 大小写敏感 下划线不要出现在名字里 分割用. 变量名中不能有空格
 - 保留字符
-```
+
+```r
 FALSE Inf NA NaN NULL TRUE break else for function if in next repeat while
 ```
+
 - 矩阵
   - 带有`dimension`属性的向量为矩阵 矩阵的生成次序为upper-left
   - `matrix(1:6,nrow=2,ncol=3)`表示建一个2行3列矩阵 从1到6 先列后行赋值 可用 `byrow = T` 来更改
@@ -168,13 +172,15 @@ FALSE Inf NA NaN NULL TRUE break else for function if in next repeat while
 - 向量操作 `union()` 并集 `intersect()` 交集 `setdiff()` 除了交集的部分
 - `rep()` 用向量循环生成向量
 
+
+```r
+x <- 1:4  # puts c(1,2,3,4) into x
+i <- rep(2, 4)  # puts c(2,2,2,2) into i
+y <- rep(x, 2)  # puts c(1,2,3,4,1,2,3,4) into y
+z <- rep(x, i)  # puts c(1,1,2,2,3,3,4,4) into z
+w <- rep(x, x)  # puts c(1,2,2,3,3,3,4,4,4,4) into w
 ```
-x <- 1:4 # puts c(1,2,3,4) into x
-i <- rep(2, 4) # puts c(2,2,2,2) into i
-y <- rep(x, 2) # puts c(1,2,3,4,1,2,3,4) into y
-z <- rep(x, i) # puts c(1,1,2,2,3,3,4,4) into z
-w <- rep(x, x) # puts c(1,2,2,3,3,3,4,4,4,4) into w
-```
+
 - 整型变量后面加上L x<-10L
 - Inf代表1/0 同样1/Inf运算结果为0
 
@@ -207,19 +213,353 @@ w <- rep(x, x) # puts c(1,2,2,3,3,3,4,4,4,4) into w
 - `unserialize` 读取二进制R对象 反之`serialize`
 
 - 设置工作目录
-```
+
+
+```r
 getwd()
 setwd(“”)
 ```
+
+
 - `?read.table` 
 - 大数据读取提速
-  -  `comment.char = ""` 不扫描注释
+  - 计算内存
+  - `comment.char = ""` 不扫描注释
+  - 设定`nrows`
   - 设定`colClasses`
-  
-```
+
+
+```r
 initial <- read.table("datatable.txt", nrows = 100)
 classes <- sapply(initial, class)
-tabAll <- read.table("datatable.txt",
-                     colClasses = classes)
+tabAll <- read.table("datatable.txt", colClasses = classes)
 ```
+
+- 使用`connections`与`file`等保存外部文件指向
+
+## 控制结构
+
+- `if else` 条件
+
+
+```r
+if(<condition>) {
+        ## do something
+} else {
+        ## do something else
+}
+if(<condition1>) {
+        ## do something
+} else if(<condition2>)  {
+        ## do something different
+} else {
+        ## do something different
+}
+```
+
+
+- `for‵ 执行固定次数的循环 嵌套不超过2层
+
+
+```r
+for (i in 1:10) {
+    print(i)
+}
+```
+
+
+- `while` 条件为真执行循环 条件从左到右执行
+
+
+```r
+count <- 0
+while (count < 10) {
+    print(count)
+    count <- count + 1
+}
+```
+
+
+- `repeat` 执行无限循环 配合`break` 中断并跳出循环
+- `next` 跳出当前循环继续执行
+
+
+```r
+for (i in 1:100) {
+    if (i <= 20) {
+        ## Skip the first 20 iterations
+        next
+    }
+    ## Do something here
+}
+```
+
+- `return` 退出函数
+- 避免使用无限循环 可用`apply`替代
+
+## 函数
+
+
+```r
+f <- function(<arguments>) {
+        ## Do something interesting
+}
+```
+
+- 函数中参数默认值可用`formals()`显示
+- 参数匹配
+  - 先检查命名参数
+  - 然后检查部分匹配
+  - 最后检查位置匹配
+- 定义函数时可以定义默认值或者设为`NULL`
+- 懒惰执行：只执行需要执行的语句
+- `...` 向其他函数传参 之后参数不可部分匹配
+
+## 编程标准
+
+- 使用文本文档与文本编辑器
+- 使用缩进
+- 限制代码行宽（80）
+- 限制单个函数长度
+
+## 范围规则
+
+- 自由变量采用静态搜索
+- 环境是由数值符号对组成 每个环境都有母环境
+- 函数与环境组成环境闭包
+- 首先从函数环境中寻找变量
+- 之后搜索母环境
+- 最高层为工作区
+- 之后按搜寻列表从扩展包中寻找变量
+- 最后为空环境 之后报错
+- 可以函数内定义函数
+- S都存在工作区 函数定义一致 R存在内存 可根据需要调用函数环境
+
+## 向量化操作
+
+- 向量操作针对元素
+- 矩阵操作也针对元素 `%*%` 表示矩阵操作
+
+## 日期与时间
+
+- 日期以`data`类型存储
+- 时间以`POSIXct` 或 `POSIXlt` 类型存储
+- 数字上是从1970-01-01以来的天数或秒数
+- `POSIXct`以整数存储时间
+- `POSIXlt`以年月日时分秒等信息存储时间
+- `strptime` `as.Date` `as.POSIXlt` `as.POSIXct`用来更改字符为时间
+
+## 循环
+
+### `lapply`
+
+- 对列表对象元素应用函数
+- 可配合匿名函数使用
+
+
+```r
+x <- list(a = 1:5, b = rnorm(10))
+lapply(x, mean)
+```
+
+```
+## $a
+## [1] 3
+## 
+## $b
+## [1] 0.04387
+```
+
+```r
+
+x <- 1:4
+lapply(x, runif, min = 0, max = 10)
+```
+
+```
+## [[1]]
+## [1] 3.744
+## 
+## [[2]]
+## [1] 6.167 1.576
+## 
+## [[3]]
+## [1] 7.445 1.588 3.170
+## 
+## [[4]]
+## [1] 6.484 6.038 7.566 2.140
+```
+
+```r
+
+x <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2))
+lapply(x, function(elt) elt[, 1])
+```
+
+```
+## $a
+## [1] 1 2
+## 
+## $b
+## [1] 1 2 3
+```
+
+
+### `sapply`
+
+- `lapply`的精简版 
+- 如果结果是单元素列表 转化为向量
+- 如果结果是等长向量 转化为矩阵
+- 否则输出依旧为列表
+
+
+```r
+x <- list(a = 1:4, b = rnorm(10), c = rnorm(20, 1), d = rnorm(100, 5))
+sapply(x, mean)
+```
+
+```
+##      a      b      c      d 
+## 2.5000 0.2613 1.0573 4.9900
+```
+
+
+### `apply`
+
+- 数组边际函数 常用于矩阵的行列处理
+- 行为1，列为2
+- 可用`rowSums` `rowMeans` `colSums` `colMeans` 来替代 大数据量更快
+
+
+```r
+x <- matrix(rnorm(50), 10, 5)
+apply(x, 1, quantile, probs = c(0.25, 0.75))
+```
+
+```
+##       [,1]    [,2]    [,3]    [,4]    [,5]   [,6]    [,7]    [,8]   [,9]
+## 25% -1.234 -0.6555 -1.0096 -1.5457 -1.4240 0.1158 -0.6198 0.02307 0.4121
+## 75%  0.897  0.7718 -0.3553  0.0363 -0.5013 1.2961 -0.3144 0.50239 0.6274
+##       [,10]
+## 25% -0.1611
+## 75%  0.9515
+```
+
+```r
+
+a <- array(rnorm(2 * 2 * 10), c(2, 2, 10))
+apply(a, c(1, 2), mean)
+```
+
+```
+##          [,1]       [,2]
+## [1,] 0.009123 -1.968e-05
+## [2,] 0.067474 -4.796e-01
+```
+
+
+### `tapply`
+
+- 对数据子集（因子变量区分）向量应用函数
+
+
+```r
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 10)
+tapply(x, f, mean)
+```
+
+```
+##       1       2       3 
+## 0.04418 0.33830 1.00656
+```
+
+
+### `split`
+
+- 将数据按因子分割为列表 常配合`lapply`使用
+- 类似`tapply`
+- 可用来生成分组 用`drop`来删除空分组
+
+
+```r
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 10)
+lapply(split(x, f), mean)
+```
+
+```
+## $`1`
+## [1] 0.41
+## 
+## $`2`
+## [1] 0.5094
+## 
+## $`3`
+## [1] 1.54
+```
+
+```r
+
+x <- rnorm(10)
+f1 <- gl(2, 5)
+f2 <- gl(5, 2)
+str(split(x, list(f1, f2), drop = TRUE))
+```
+
+```
+## List of 6
+##  $ 1.1: num [1:2] 0.7408 0.0456
+##  $ 1.2: num [1:2] -0.672 -0.622
+##  $ 1.3: num 1.74
+##  $ 2.3: num -0.416
+##  $ 2.4: num [1:2] -0.594 1.436
+##  $ 2.5: num [1:2] 0.076 -0.0805
+```
+
+
+### `mapply`
+
+- 多变量版`apply` 从多个参数范围取值 并用函数得到结果
+
+
+```r
+noise <- function(n, mean, sd) {
+    rnorm(n, mean, sd)
+}
+mapply(noise, 1:5, 1:5, 2)
+```
+
+```
+## [[1]]
+## [1] 2.047
+## 
+## [[2]]
+## [1]  4.009 -2.797
+## 
+## [[3]]
+## [1] 3.0327 3.8435 0.7555
+## 
+## [[4]]
+## [1] 5.604 6.220 2.108 6.668
+## 
+## [[5]]
+## [1] 5.264 5.316 6.557 8.286 5.405
+```
+
+```r
+
+# 等同于如下循环
+
+# list(noise(1, 1, 2), noise(2, 2, 2), noise(3, 3, 2), noise(4, 4, 2),
+# noise(5, 5, 2))
+```
+
+
+## 调试
+
+- 三种提示 `message` `warning` `error` 只有`error`致命
+- 关注重现性
+- 调试工具 `traceback` `debug` `browser` `trace` `recover`
+- 三思而行
 
