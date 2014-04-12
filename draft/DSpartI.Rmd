@@ -1,4 +1,4 @@
-Data Science
+Data Science(part I)
 ============
 
 # The Data Scientist's Toolbox
@@ -470,7 +470,7 @@ rnorm(n, mean = 0, sd = 1)
 - 三思而行
 
 
-# 分析代码
+## 分析代码
 
 - 先设计 后优化
 - `system.time` 计算代码运行时间 返回对象类型`proc_time`
