@@ -152,6 +152,126 @@ myjson <- toJSON(iris, pretty = TRUE)
 ```
 
 
+## 读取MySQL数据库
+
+- 网络应用常见数据库软件
+- 一行一记录
+- 数据库表间有index向量
+- [常见命令](http://www.pantz.org/software/mysql/mysqlcommands.html)
+- [指南](http://www.r-bloggers.com/mysql-and-r/)
+- RMySQL包
+
+
+```r
+library(RMySQL)
+# 读取数据库
+ucscDb <- dbConnect(MySQL(), user = "genome", host = "genome-mysql.cse.ucsc.edu")
+result <- dbGetQuery(ucscDb, "show databases;")
+# 断开链接
+dbDisconnect(ucscDb)
+# 读取指定数据库
+hg19 <- dbConnect(MySQL(), user = "genome", db = "hg19", host = "genome-mysql.cse.ucsc.edu")
+allTables <- dbListTables(hg19)
+length(allTables)
+# mysql语句查询
+dbGetQuery(hg19, "select count(*) from affyU133Plus2")
+# 选择子集
+query <- dbSendQuery(hg19, "select * from affyU133Plus2 where misMatches between 1 and 3")
+affyMis <- fetch(query)
+quantile(affyMis$misMatches)
+```
+
+
+## 读取HDF5数据
+
+- 分层分组读取大量数据的格式
+- rhdf5包
+
+
+```r
+library(rhdf5)
+created = h5createFile("example.h5")
+created = h5createGroup("example.h5", "foo")
+created = h5createGroup("example.h5", "baa")
+created = h5createGroup("example.h5", "foo/foobaa")
+h5ls("example.h5")
+A = matrix(1:10, nr = 5, nc = 2)
+h5write(A, "example.h5", "foo/A")
+B = array(seq(0.1, 2, by = 0.1), dim = c(5, 2, 2))
+attr(B, "scale") <- "liter"
+h5write(B, "example.h5", "foo/foobaa/B")
+h5ls("example.h5")
+df = data.frame(1L:5L, seq(0, 1, length.out = 5), c("ab", "cde", "fghi", "a", 
+    "s"), stringsAsFactors = FALSE)
+h5write(df, "example.h5", "df")
+h5ls("example.h5")
+readA = h5read("example.h5", "foo/A")
+readB = h5read("example.h5", "foo/foobaa/B")
+readdf = h5read("example.h5", "df")
+```
+
+
+## 读取网页数据
+
+- 网页抓取HTML数据
+- 读完了一定关链接
+- httr包
+
+
+```r
+con = url("http://scholar.google.com/citations?user=HI-I6C0AAAAJ&hl=en")
+htmlCode = readLines(con)
+close(con)
+htmlCode
+library(XML)
+url <- "http://scholar.google.com/citations?user=HI-I6C0AAAAJ&hl=en"
+html <- htmlTreeParse(url, useInternalNodes = T)
+xpathSApply(html, "//title", xmlValue)
+library(httr)
+html2 = GET(url)
+content2 = content(html2, as = "text")
+parsedHtml = htmlParse(content2, asText = TRUE)
+xpathSApply(parsedHtml, "//title", xmlValue)
+GET("http://httpbin.org/basic-auth/user/passwd")
+GET("http://httpbin.org/basic-auth/user/passwd", authenticate("user", "passwd"))
+google = handle("http://google.com")
+pg1 = GET(handle = google, path = "/")
+pg2 = GET(handle = google, path = "search")
+```
+
+
+## 读取API
+
+- 通过接口授权后调用数据
+- httr包
+
+
+```r
+myapp = oauth_app("twitter", key = "yourConsumerKeyHere", secret = "yourConsumerSecretHere")
+sig = sign_oauth1.0(myapp, token = "yourTokenHere", token_secret = "yourTokenSecretHere")
+homeTL = GET("https://api.twitter.com/1.1/statuses/home_timeline.json", sig)
+json1 = content(homeTL)
+json2 = jsonlite::fromJSON(toJSON(json1))
+```
+
+
+## 读取其他资源
+
+- 图片
+  - [jpeg](http://cran.r-project.org/web/packages/jpeg/index.html)
+  - [readbitmap](http://cran.r-project.org/web/packages/readbitmap/index.html)
+  - [png](http://cran.r-project.org/web/packages/png/index.html)
+  - [EBImage (Bioconductor)](http://www.bioconductor.org/packages/2.13/bioc/html/EBImage.html)
+
+- GIS
+  - [rdgal](http://cran.r-project.org/web/packages/rgdal/index.html)
+  - [rgeos](http://cran.r-project.org/web/packages/rgeos/index.html)
+  - [raster](http://cran.r-project.org/web/packages/raster/index.html)
+
+- 声音
+  - [tuneR](http://cran.r-project.org/web/packages/tuneR/)
+  - [seewave](http://rug.mnhn.fr/seewave/)
+
 ## *数据操作data.table包*
 
 - 基本兼容'data.frame'
@@ -194,5 +314,4 @@ DT[, `:=`(b, mean(x + w)), by = a]
 DT <- data.table(x = sample(letters[1:3], 1e+05, TRUE))
 DT[, .N, by = x]
 ```
-
 
