@@ -272,11 +272,68 @@ json2 = jsonlite::fromJSON(toJSON(json1))
   - [tuneR](http://cran.r-project.org/web/packages/tuneR/)
   - [seewave](http://rug.mnhn.fr/seewave/)
 
-## *数据操作data.table包*
+## 数据截取与排序
 
-- 基本兼容'data.frame'
+- 增加行直接`$`
+- `seq`产生序列
+- 通过`[`按行 列或条件截取
+- `which`返回行号
+- 排序向量用`sort`
+- 排序数据框(多向量)用`order`
+- [plyl包](http://plyr.had.co.nz/09-user/)排序
+
+
+```r
+library(plyr)
+arrange(X, var1)
+arrange(X, desc(var1))
+```
+
+
+## 数据总结
+
+- `head` `tail`查看数据
+- `summary` `str`总结数据
+- `quantile` 按分位数总结向量
+- `table` 按向量元素频数总结
+- `sum(is.na(data))` `any(is.na(data))` `all(data$x > 0)` 异常值总结
+- `colSums(is.na(data))` 行列求和
+- `table(data$x %in% c("21212"))`特定数值计数总结
+- `xtabs` `ftable` 创建列联表
+- `print(object.size(fakeData),units="Mb")` 现实数据大小
+- `cut` 通过设置`breaks`产生分类变量
+- Hmisc包
+
+
+```r
+library(Hmisc)
+data$zipGroups = cut2(data$zipCode, g = 4)
+table(data$zipGroups)
+library(plyr)
+# mutate进行数据替换或生成
+data2 = mutate(data, zipGroups = cut2(zipCode, g = 4))
+table(data2$zipGroups)
+```
+
+
+## 数据整理
+
+- 每一列一个变量
+- 每一行一个样本
+- 每个文件存储一类样本
+- `melt`进行数据融合
+- [`reshape2`包](http://www.slideshare.net/jeffreybreen/reshaping-data-in-r)
+- `dcast`分组汇总数据框
+- `acast`分组汇总向量数组
+- `arrange`指定变量名排序
+- `merge`按照指定向量合并数据
+- plyr包的`join`函数也可实现合并
+
+## [*数据操作data.table包*](https://github.com/raphg/Biostat-578/blob/master/Advanced_data_manipulation.Rpres)
+
+- 基本兼容`data.frame`
 - 速度更快
-- 通过'key'可指定因子变量并快速提取分组的行
+- 通过`key`可指定因子变量并快速提取分组的行
 - 可在第二个参数是R表达式
 
 
@@ -315,3 +372,63 @@ DT <- data.table(x = sample(letters[1:3], 1e+05, TRUE))
 DT[, .N, by = x]
 ```
 
+
+## 文本处理
+
+- 处理大小写`tolower` `toupper`
+- 处理变量名`strsplit`
+
+
+```r
+firstElement <- function(x) {
+    x[1]
+}
+sapply(splitNames, firstElement)
+```
+
+
+- 字符替换`sub` `gsub`
+- 寻找变量`grep`(返回行号) `grepl`(返回逻辑值)
+- stringr包 `stringr` 
+- `paste0` 不带空格
+- `str_trim` 去除空格
+- 命名原则
+  - 变量名小写
+  - 描述性
+  - 无重复
+  - 变量名不要符号分割
+  - Names of variables should be
+- 正则表达式
+  - 文字处理格式
+  - `^` 匹配开头
+  - `$` 匹配结尾
+  - `[]` 匹配大小写 `^`在开头表示非
+  - `.` 匹配任意字符
+  - `|` 匹配或
+  - `()` 匹配与
+  - `?` 匹配可选择
+  - `*` 匹配任意
+  - `+` 匹配至少一个
+  - `{}` 匹配其中最小最大 一个值表示精确匹配 `m,`表示至少m次匹配
+  - `\1` 匹配前面指代
+
+## 日期处理
+
+- `formate`处理日期格式
+  - `%d` 日 
+  - `%a` 周缩写
+  - `%A` 周
+  - `%m` 月
+  - `%b` 月缩写
+  - `%B` 月全名
+  - `%y` 2位年
+  - `%Y` 4位年
+- `weekdays` 显示星期
+- `months` 显示月份
+- `julian` 显示70年以来的日期
+- [lubridate包](http://cran.r-project.org/web/packages/lubridate/vignettes/lubridate.html)
+  - `ymd`
+  - `mdy`
+  - `dmy`
+  - `ymd_hms`
+  - `Sys.timezone`
