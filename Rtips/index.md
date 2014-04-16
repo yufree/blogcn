@@ -71,6 +71,557 @@ title: R tips
 - 非线性模型
 - logistic模型
 
+-----
+
+# R语言入门
+
+## R Programming
+
+### Overview and History of R
+
+- R语言是S语言的一种方言
+- 1976年S是John Chambers等在贝尔实验室作为Fortran的扩展库开发出来的
+- 1988年用C语言重写 S3方法 白皮书
+- 1993年StatSci从贝尔实验室获得S语言的独家开发售卖许可
+- 1998年S4方法 绿皮书 之后S语言稳定 获得Association for Computing Machinery’s Software System Award
+- 2004年Insightful（原StatSci）从Lucent收购了S语言
+- 2006年Alcatel收购了Lucent成立Alcatel-Lucent
+- 2008年TIBCO收购Insightful 之前Insightful开发并售卖S-PLUS
+- 1991年Ross Ihaka与Robert GentlemanNew在Zealand开发了R
+- 1993年发布R第一份许可
+- 1995年R作为自由软件发放GUN许可
+- 1996年R邮件列表创立
+- 1997年R Core成立 控制R源码
+- 2000年R version 1.0.0 放出
+- 2013年R version 3.0.2 放出
+- R由CRAN掌控的base包与其他包组成
+- 其余参考[R主页](http://www.r-project.org/)
+
+### 获得帮助
+
+
+```r
+help()
+`?`(command)
+# 提问给出以下信息
+version
+str(.Platform)
+```
+
+
+### 数据类型及基本运算
+
+- 所有数据都是对象 所有对象都有类型
+- 基本类型包括：字符“” 数字 整数L 复数(`Re`实部 `Im`虚部) 逻辑
+- 向量储存同一类型数据
+- list存储不同类型数据 `[[*]]`引用相应向量 `unlist` 可用做紧凑输出
+- 对象可以有属性`attributes`
+- 对象赋值符号为 <- 赋值同时展示加括号或直接输入对象名 可累加赋值 `a <- b <- c`
+- `#`表示注释 不执行
+- `:` 用来产生整数序列 也可以用`seq`生成
+- 向量用`c`产生
+- 空向量用`vector()`函数建立
+- 向量中类型不同的对象元素会被强制转换为同一类型 字符优先级最高 其次数字 其次逻辑(0 or 1) 也可以用来串联字符
+- 可使用`as.*`来强制转化数据类型
+- 对象可以用`names`命名
+- 变量名开头不能是数字和. 大小写敏感 下划线不要出现在名字里 分割用. 变量名中不能有空格
+- 保留字符
+
+```r
+FALSE Inf NA NaN NULL TRUE break else for function if in next repeat while
+```
+
+- 清空`rm(list = ls())`
+- 矩阵
+  - 带有`dimension`属性的向量为矩阵 矩阵的生成次序为upper-left
+  - `matrix(1:6,nrow=2,ncol=3)`表示建一个2行3列矩阵 从1到6 先列后行赋值 可用 `byrow = T` 来更改
+  - 可用`c`给`dim`赋值行和列数 这样可把一个向量转为一个矩阵 `m<-1:6;dim(m)<-c(2,3)`
+  - 矩阵可以用`rbind`或`cbind`生成
+  - `t`对矩阵转置
+- 因子变量表示分类数据 用标签名区分 用`level`来命名排序 默认是字母排序 有些函数对顺序敏感可用 `levels = c()` 来命名 ( 例如低中高的排序 ) 数字表示 `drop = T` 表示显示截取数据的水平  `nlevels`给出个数
+- NaN表未定义或缺失值 NA表示无意义转换或缺失值 NaN可以是NA反之不可以 NA有数据类型 is.NaN与is.NA 可用来检验
+- 数据框
+  - 特殊list 每个元素长度相等
+  - 每一列类型相同 矩阵所有数据类型相同
+  - 特殊属性`row.names`
+  - 转为矩阵`data.matrix`
+  - 变量名自动转化 可以不同
+  - 因子变量保持为字符可以用 `I` `data.frame(x,y,I(c))`
+- 数组
+  - 表示更高维度的数据 
+  - `dim() = c(x,y,z)` 三维数组表示一组数 
+  - `dimnames` 给数组命名 
+  - 数组调用如果只有一行 需要`drop = F` 否则 不会按照数组分类
+- `ts` 产生时间序列对象
+- `.Last.value` 引用前一个数值
+- 取整数 用`round(x,n)` n表示保留几位小数
+- 截取整数 `trunc`
+- 开平方 `sqrt`
+- 绝对值 `abs`
+- 指数函数 `exp`
+- 自然对数函数 `log`
+- 以 10 为底的对数函数 `log10`
+- 三角函数 `sin cos tan asin acos atan`
+- 常用的逻辑运算符有: 大于 `>` 小于 `<` 等于 `==` 小于或等于 `<=` 大于或等于 `>=` 与 `&` 非 `!` 或`|`
+- 判断向量x中是否与y中元素相等 `x %in% y` 结果返回逻辑值
+- `sum` 求和 `prod` 求连乘
+- `range` 给极值范围
+- `duplicated` 给出有重复的值 
+- `unique` 给出无重复的值
+- 向量操作 `union` 并集 `intersect` 交集 `setdiff` 除了交集的部分
+- `rep` 用向量循环生成向量
+
+
+```r
+x <- 1:4  # puts c(1,2,3,4) into x
+i <- rep(2, 4)  # puts c(2,2,2,2) into i
+y <- rep(x, 2)  # puts c(1,2,3,4,1,2,3,4) into y
+z <- rep(x, i)  # puts c(1,1,2,2,3,3,4,4) into z
+w <- rep(x, x)  # puts c(1,2,2,3,3,3,4,4,4,4) into w
+```
+
+- 整型变量后面加上L x<-10L
+- Inf代表1/0 同样1/Inf运算结果为0
+
+### 截取数据
+
+- `[]`截取数据
+- 可以用`[x,y]`提取特定数值
+- `[-1,-2]`可剔除第一行第二列
+- `[[]]`用来从list或者frame里提取元素 类型固定 可提取序列`x[[1]][[3]]` 可部分匹配  `exact=FALSE`
+- $用名字提取元素 可部分匹配
+- 提取矩阵时默认只能提取向量 但可以提取1*1矩阵`x[1,2,drop=FALSE]`
+- 先用`is.NA()`提取 用`!`排除 缺失值可用`is.element(x,y)`来处理很多表示NA值的数字 返回`x %in% y`的逻辑值
+- 用`complete.cases()`提取有效数据用`[]`提取可用数据
+- `head(x,n)` n表示从头截取多少行
+- `tail(x,n)` n表示从尾截取多少行
+- `subset(x,f)` x表示数据 f表示表达式
+- 条件筛选中获得一个变量多个数值的数据使用 `[is.element(x,c(' ',' ',' ')),]` 或者`[x%in%c(' ',' ',' '),]` 使用`x == c( ' ' , ' ' , ' ' )` 会报错 循环查找三个变量 
+- `x!='t'` 可能会把空白值输入 应该使用`is.element(x,'t')`
+- `ifelse(con,yes,no)` 利用条件筛选 返回yes 或者no 的值
+- 支持正则表达式
+
+
+### 读取数据
+
+- `read.table` `read.csv` 读取表格 反之`write.table`
+- `readLines` 读取文本行 反之`writeLines`
+- `source` 读取R代码 反之`dump`
+- `dget` 读取多个R代码 反之`dput`
+- `load` 读取保存的工作区 反之`save`
+- `unserialize` 读取二进制R对象 反之`serialize`
+
+- 设置工作目录
+
+
+```r
+getwd()
+setwd()
+```
+
+
+- `?read.table` 
+- 大数据读取提速
+  - 计算内存
+  - `comment.char = ""` 不扫描注释
+  - 设定`nrows`
+  - 设定`colClasses`
+
+
+```r
+initial <- read.table("datatable.txt", nrows = 100)
+classes <- sapply(initial, class)
+tabAll <- read.table("datatable.txt", colClasses = classes)
+```
+
+- 使用`connections`与`file`等保存外部文件指向
+
+### 控制结构
+
+- `if else` 条件
+
+
+```r
+if(<condition>) {
+        ## do something
+} else {
+        ## do something else
+}
+if(<condition1>) {
+        ## do something
+} else if(<condition2>)  {
+        ## do something different
+} else {
+        ## do something different
+}
+```
+
+
+- `for‵ 执行固定次数的循环 嵌套不超过2层
+
+
+```r
+for (i in 1:10) {
+    print(i)
+}
+```
+
+
+- `while` 条件为真执行循环 条件从左到右执行
+
+
+```r
+count <- 0
+while (count < 10) {
+    print(count)
+    count <- count + 1
+}
+```
+
+
+- `repeat` 执行无限循环 配合`break` 中断并跳出循环
+- `next` 跳出当前循环继续执行
+
+
+```r
+for (i in 1:100) {
+    if (i <= 20) {
+        ## Skip the first 20 iterations
+        next
+    }
+    ## Do something here
+}
+```
+
+- `return` 退出函数
+- 避免使用无限循环 可用`apply`替代
+
+### 函数
+
+
+```r
+f <- function(<arguments>) {
+        ## Do something interesting
+}
+```
+
+- 函数中参数默认值可用`formals()`显示
+- 参数匹配
+  - 先检查命名参数
+  - 然后检查部分匹配
+  - 最后检查位置匹配
+- 定义函数时可以定义默认值或者设为`NULL`
+- 懒惰执行：只执行需要执行的语句
+- `...` 向其他函数传参 之后参数不可部分匹配
+
+### 编程标准
+
+- 使用文本文档与文本编辑器
+- 使用缩进
+- 限制代码行宽 80为宜
+- 限制单个函数长度
+
+### 范围规则
+
+- 自由变量采用静态搜索
+- 环境是由数值符号对组成 每个环境都有母环境
+- 函数与环境组成环境闭包
+- 首先从函数环境中寻找变量
+- 之后搜索母环境
+- 最高层为工作区
+- 之后按搜寻列表从扩展包中寻找变量
+- 最后为空环境 之后报错
+- 可以函数内定义函数
+- S都存在工作区 函数定义一致 R存在内存 可根据需要调用函数环境
+
+### 向量化操作
+
+- 向量操作针对元素
+- 矩阵操作也针对元素 `%*%` 表示矩阵操作
+
+### 日期与时间
+
+- 日期以`data`类型存储
+- 时间以`POSIXct` 或 `POSIXlt` 类型存储
+- 数字上是从1970-01-01以来的天数或秒数
+- `POSIXct`以整数存储时间
+- `POSIXlt`以年月日时分秒等信息存储时间
+- `strptime` `as.Date` `as.POSIXlt` `as.POSIXct`用来更改字符为时间
+
+### 循环
+
+#### `lapply`
+
+- 对列表对象元素应用函数
+- 可配合匿名函数使用
+
+
+```r
+x <- list(a = 1:5, b = rnorm(10))
+lapply(x, mean)
+```
+
+```
+## $a
+## [1] 3
+## 
+## $b
+## [1] -0.1443
+```
+
+```r
+
+x <- 1:4
+lapply(x, runif, min = 0, max = 10)
+```
+
+```
+## [[1]]
+## [1] 9.499
+## 
+## [[2]]
+## [1] 0.8047 7.4324
+## 
+## [[3]]
+## [1] 3.431 8.884 2.698
+## 
+## [[4]]
+## [1] 5.781 7.133 9.609 6.583
+```
+
+```r
+
+x <- list(a = matrix(1:4, 2, 2), b = matrix(1:6, 3, 2))
+lapply(x, function(elt) elt[, 1])
+```
+
+```
+## $a
+## [1] 1 2
+## 
+## $b
+## [1] 1 2 3
+```
+
+
+#### `sapply`
+
+- `lapply`的精简版 
+- 如果结果是单元素列表 转化为向量
+- 如果结果是等长向量 转化为矩阵
+- 否则输出依旧为列表
+
+
+```r
+x <- list(a = 1:4, b = rnorm(10), c = rnorm(20, 1), d = rnorm(100, 5))
+sapply(x, mean)
+```
+
+```
+##      a      b      c      d 
+## 2.5000 0.1623 0.5613 5.0406
+```
+
+
+#### `vapply`
+
+- 类似`lapply`可用更复杂函数 返回矩阵
+
+#### `replicate`
+
+- 用于将函数循环使用 如返回随机矩阵
+
+#### `rapply`
+
+- 用`how`来调整输出方法 如选取某列表中类型数据进行迭代
+
+#### `apply`
+
+- 数组边际函数 常用于矩阵的行列处理
+- 行为1，列为2
+- 可用`rowSums` `rowMeans` `colSums` `colMeans` 来替代 大数据量更快
+
+
+```r
+x <- matrix(rnorm(50), 10, 5)
+apply(x, 1, quantile, probs = c(0.25, 0.75))
+```
+
+```
+##        [,1]    [,2]    [,3]   [,4]    [,5]   [,6]    [,7]     [,8]    [,9]
+## 25% -0.7550 -0.1150 -0.6049 -2.047 -0.7313 0.2552 -0.7638 -0.08716 -0.9866
+## 75%  0.6002  0.2111  0.4513  0.810  0.9773 0.4735  1.3583  0.72104 -0.7451
+##      [,10]
+## 25% -1.297
+## 75%  1.153
+```
+
+```r
+
+a <- array(rnorm(2 * 2 * 10), c(2, 2, 10))
+apply(a, c(1, 2), mean)
+```
+
+```
+##         [,1]   [,2]
+## [1,] -0.1998 0.2666
+## [2,]  0.3661 0.1896
+```
+
+
+#### `tapply`
+
+- 对数据子集（因子变量区分）向量应用函数
+
+
+```r
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 10)
+tapply(x, f, mean)
+```
+
+```
+##       1       2       3 
+## -0.3899  0.4719  1.0280
+```
+
+
+#### `by`
+
+- 对数据按照因子变量应用函数 类似`tapply` 
+- 按照某个分类变量a分类求均值 `by(x[,-a],a,mean)`
+
+#### `split`
+
+- 将数据按因子分割为列表 常配合`lapply`使用
+- 类似`tapply`
+- 可用来生成分组 用`drop`来删除空分组
+
+
+```r
+x <- c(rnorm(10), runif(10), rnorm(10, 1))
+f <- gl(3, 10)
+lapply(split(x, f), mean)
+```
+
+```
+## $`1`
+## [1] 0.1348
+## 
+## $`2`
+## [1] 0.4068
+## 
+## $`3`
+## [1] 0.7912
+```
+
+```r
+
+x <- rnorm(10)
+f1 <- gl(2, 5)
+f2 <- gl(5, 2)
+str(split(x, list(f1, f2), drop = TRUE))
+```
+
+```
+## List of 6
+##  $ 1.1: num [1:2] -1.408 0.726
+##  $ 1.2: num [1:2] 0.851 -1.992
+##  $ 1.3: num -0.232
+##  $ 2.3: num -0.827
+##  $ 2.4: num [1:2] 0.568 0.921
+##  $ 2.5: num [1:2] 0.00234 -0.07148
+```
+
+
+#### `mapply`
+
+- 多变量版`apply` 从多个参数范围取值 并用函数得到结果
+
+
+```r
+noise <- function(n, mean, sd) {
+    rnorm(n, mean, sd)
+}
+mapply(noise, 1:5, 1:5, 2)
+```
+
+```
+## [[1]]
+## [1] 3.034
+## 
+## [[2]]
+## [1] 2.171 5.217
+## 
+## [[3]]
+## [1] 4.413 1.436 4.034
+## 
+## [[4]]
+## [1] 3.186 3.462 2.538 1.448
+## 
+## [[5]]
+## [1] 5.453 3.605 6.845 5.335 7.109
+```
+
+```r
+
+# 等同于如下循环
+
+# list(noise(1, 1, 2), noise(2, 2, 2), noise(3, 3, 2), noise(4, 4, 2),
+# noise(5, 5, 2))
+```
+
+
+#### `eapply`
+
+- 对环境变量应用函数 用于包
+
+
+
+### 模拟
+
+- 在某分布下产生随机数
+  - d 分布概率密度
+  - r 分布随机数
+  - p 分布累计概率
+  - q 分布分位数
+  
+
+```r
+dnorm(x, mean = 0, sd = 1, log = FALSE)
+pnorm(q, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)
+qnorm(p, mean = 0, sd = 1, lower.tail = TRUE, log.p = FALSE)
+rnorm(n, mean = 0, sd = 1)
+```
+
+
+- `set.seed`保证重现性
+- `sample`对数据采样
+
+### 调试
+
+- 三种提示 `message` `warning` `error` 只有`error`致命
+- 关注重现性
+- 调试工具 `traceback` `debug` `browser` `trace` `recover`
+- 三思而行
+
+
+### 分析代码
+
+- 先设计 后优化
+- `system.time` 计算代码运行时间 返回对象类型`proc_time`
+  - ‵user time` 执行代码用时
+  - `system time` CPU时间
+  - `elapsed time` 实际用时
+  - 在多核或并行条件下实际用时可以短于执行代码用时
+  - 明确知道耗时较长的函数时使用
+- `Rprof` R代码要支持分析函数
+  - `summaryRprof`可使结果易读
+  - 不要与`system.time`混用
+  - 0.02s记录一次执行函数
+  - `by.total` 记录单个函数用时
+  - `by.self` 记录函数执行时被调用函数用时
+
 # 使用R解决常见问题（除了《153 分钟学会 R》提到的以外）
 
 ## 图例颜色填充失灵
@@ -134,10 +685,6 @@ markdown语法相对简单，输出幻灯片中结构的调整最好直接修改
 
 创建dataframe到一个对象如data`data <- data.frame(pos = factor(0),conc = numeric(0))`，然后`edit(data)`
 
-## 为数据框里添加列向量
-
-假设数据框名为data，列向量为b，直接`data$new <- b`或者使用transform函数`data <- transform(data,b)`或者`edit(data)`
-
 ## 数据框变量改名
 
 fix(data)或者使用reshape包中的rename函数
@@ -150,50 +697,3 @@ fix(data)或者使用reshape包中的rename函数
 library(plyr)
 ddply(x,.(a0),function(df) df[seq(min(5,nrow(df))),])
 ```
-
-----
-
-## R中apply及其类似函数的区别与联系
-
-- apply
-
-对数组或向量进行操作，apply(X, MARGIN, FUN, ...)，这里面margin是最难理解的，可以想象成对对象X的取值方法，1就是按行，2就是按列，c(1,2)就是全体，这时其实就是对所有元素操作了
-- eapply
-
-对环境元素套用函数，返回列表，环境是个啥不清楚，大约是用来打包对象的
-
-- lapply
-
-对列表x内的元素套用函数，返回与x等元素数的列表，lapply(X, FUN, ...)
-
-- sapply
-
-与lapply基本一致，不过返回的不是列表，返回的是一个包含与X等元素数的向量，sapply(X, FUN, ...)
-
-- vapply
-
-与sapply基本一致，不过可以返回一个预定义格式的矩阵，由FUN.VALUE决定，可以给定函数输出形式，vapply(X, FUN, FUN.VALUE, ...)
-
-- replicate
-
-一般用在随机数生成上，例如生成多组正态分布，replicate(n,rnorm(x)),就是生成10组含x个元素的正态分布数，每组为一个向量，结果为x*n的矩阵，这点类似重复用sapply生成向量，然后cbind成矩阵
-
-- mapply
-
-可以看成一种处理元素数据的方法，跟函数所需参数有关，mapply(rep, 1:4, 4:1)中rep需要两个参数，一个是需要重复处理的数据，一个是重复的次数,mapply的作用就是从第一个参数里取第一个数据然后从第二个参数里取第二个数据作为重复次数，这样得到第一个元素，取完了就得到一个列表，数据排列得当相当于求方程
-
-- rapply
-
-这个略复杂，参数how为replace或list时，数据结构不变；但how为unlist时，所有数据就压扁成一个list了，classes表示可选择处理数据，如字符或数字，感觉在处理列表时有用，例如对所有列表中的数字元素开平方，rapply(object, f, classes = "ANY", deflt = NULL,how = c("unlist", "replace", "list"), ...)
-
-- tapply
-
-有分类变量列，想按分类变量分组处理连续变量数据可考虑用这个函数，X为连续变量，INDEX为分组变量，可用来处理不规则数组，tapply(X, INDEX, FUN = NULL, …, simplify = TRUE)
-
-- by
-
-跟上面比较类似，by也是对着分组变量用函数处理连续变量，输出结果也差不多，可配合aggregate使用
-
-- 小结
-
-遇到需要处理按分类处理连续变量的情况，考虑by；遇到按行列处理，考虑apply；处理列表元素可考虑lapply或sapply，其余按情况来使用
