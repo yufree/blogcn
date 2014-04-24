@@ -132,6 +132,7 @@ str(.Platform)
 ```{r,eval=FALSE}
 FALSE Inf NA NaN NULL TRUE break else for function if in next repeat while
 ```
+- 清空`rm(list = ls())`
 - 矩阵
   - 带有`dimension`属性的向量为矩阵 矩阵的生成次序为upper-left
   - `matrix(1:6,nrow=2,ncol=3)`表示建一个2行3列矩阵 从1到6 先列后行赋值 可用 `byrow = T` 来更改
