@@ -212,7 +212,7 @@ cols <- brewer.pal(3, "BuGn")
 
 ## 研究流程
 
-[流程图](http://yufree.github.io/blogcn/figure/researchpipeline.png)
+![流程图](http://yufree.github.io/blogcn/figure/researchpipeline.png)
 
 ## 数据分析步骤
 
