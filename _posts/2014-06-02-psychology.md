@@ -1,6 +1,6 @@
 ---
 layout: post
-title:心理学导论笔记
+title: 心理学导论笔记
 ---
 
 >Psychology is the science of behavior and the mind.
