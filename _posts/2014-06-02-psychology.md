@@ -327,7 +327,7 @@ second chance. 如果告诉你这是关于放风筝的 就好记了
     - 亲密 分享秘密信息
     - 激情 
     - 决心或承诺 维系关系
-![Alt text](../figure/love1.png)
+![Alt text](http://yufree.github.io/blogcn/figure/love1.png)
 
         - line 3 一见钟情
         - line 4 包办婚姻的第一阶段 离婚率并不高 社会文化原因
@@ -341,7 +341,7 @@ second chance. 如果告诉你这是关于放风筝的 就好记了
     - 四小要素
         - 能力 偶尔犯错却有能力的人吸引力高-出丑效应
             -经典实验-出丑效应
-![Alt text](../figure/love2.png)
+![Alt text](http://yufree.github.io/blogcn/figure/love2.png)
         - 身体吸引力 帅不帅
             - 潜意识中外表很重要 对第二次约会
             - 假发实验 外观或魅力对评价的影响很大
