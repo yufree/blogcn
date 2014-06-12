@@ -1,85 +1,81 @@
----
-layout: post
-title: latex tips
----
-
-# 简明latex基础知识笔记
+# 简明latex笔记
 
 ## 关于tex
 
-Donald Knuth
+- 作者 Donald Knuth
 
-|- tex 排版引擎 圆周率
+- `tex` 排版引擎 圆周率
 
-|- metafont 处理字体 自然对数的底数
+- `metafont` 处理字体 自然对数的底数
 
-|- 控制序列 钩子为\ 
+- 控制序列 钩子为`\` 
 
-|- 宏包 对控制序列打包 钩子为\ 
+- 宏包 对控制序列打包 钩子为`\ `
 
-|-- Lamport
+        - `Lamport`
 
-|-- latex 宏包 分部分处理文档 打包了大量命令
+        - `latex` 宏包 分部分处理文档 打包了大量命令
 
-|-- latex 2e 后基本停止
+        - `latex 2e` 后基本停止
 
-|-- Hans
+        - Hans 对 `latex` 不满 认为可定制性不够 遂进行二次开发 有了 `context`
 
-|-- 对latex不满 认为可定制性不够 遂进行二次开发 有了context
+- 引擎 处理控制序列 进行排版
 
-|- 引擎 处理控制序列 进行排版
+        - `pdftex` 可解决文档直接输出为PDF的问题 避免产生dvi
 
-|-- pdftex 可解决文档直接输出为PDF的问题 避免产生dvi
+        - 早期不支持unicode 对多国语言只能通过调用宏包来实现字符与图形对应 `cjk` `ctt` `ctex` 等都是此类宏包 需要安装字体
 
-|-- 早期不支持unicode 对多国语言只能通过调用宏包来实现字符与图形对应 cjk ctt ctex 等都是此类宏包 需要安装字体
+        - `xetex` 可原生支持unicode的引擎并调用系统字体 支持plain tex xelatex 可支持latex宏包
 
-|-- xetex 可原生支持unicode的引擎并调用系统字体 支持plain tex xelatex 可支持latex宏包
+        - `luatex` 合并`metapost` 可直接绘图 可直接调用字体 可脱离宏包调用程序 现与 `context` 结合紧密
 
-|-- luatex 合并metapost 可直接绘图 可直接调用字体 可脱离宏包调用程序 现与context结合紧密
+- `tex`格式 Knuth为原始300个控制序列写的宏包 有600命令 这900个合称`plain tex`
 
-|- tex格式 Knuth为原始300个控制序列写的宏包 有600命令 这900个合称plain tex
+- 将引擎 宏包 格式 辅助程序等打包即为发行版
 
-|- 将引擎 宏包 格式 辅助程序等打包即为发行版
+        - `miktex` `texlive` `mactex`
 
-|-- miktex texlive mactex
+        - `context` `minimals` 只有自己的引擎与宏包
 
-|-- context minimals 只有自己的引擎与宏包
+- 字体 最早是栅格 后来是矢量 
 
-|- 字体 最早是栅格 后来是矢量 
+        - type I 是最早的矢量
 
-|-- type I 是最早的矢量
+        - truetype 是type I 的竞争对手
 
-|-- truetype 是type I 的竞争对手
+        - opentype 是基于truetype的进化版
 
-|-- opentype 是基于truetype的进化版
+        - 最早格式为DVI 为字体准备了字形盒子 可通过上面编码调用字库显示 之后出现了PS与PDF
 
-|-- 最早格式为DVI 为字体准备了字形盒子 可通过上面编码调用字库显示 之后出现了PS与PDF
+        - 原来要编译多次 现在只需要用`xetex`或`luatex`引擎就可以了 他们内置了库来实现字形盒子与字体的联系 这个库有cache功能
 
-|-- 原来要编译多次 现在只需要用xetex或luatex引擎就可以了 他们内置了库来实现字形盒子与字体的联系 这个库有cache功能
+- 字体分类
 
-|- 字体分类
+        - 衬线体 起笔落笔有差异 横竖粗细各不同 易于识别 宋体
 
-|-- 衬线体 起笔落笔有差异 横竖粗细各不同 易于识别 宋体
+        - 非衬线体 笔画粗细一致 无装饰 醒目 黑体
 
-|-- 非衬线体 笔画粗细一致 无装饰 醒目 黑体
+        - 等宽体 每个字宽窄相同 汉字 编程
 
-|-- 等宽体 每个字宽窄相同 汉字 编程
+## 关于`xetex`
 
-## 关于xetex
+- `xeCJK` 使用`xelatex`引擎的中文宏包 纠正了`xelatex`一些缩进等的不美观
 
-|- xeCJK 使用xelatex引擎的中文宏包 纠正了xelatex一些缩进等的不美观
+- `ctex` 包含早期`CTT` `CJK` 及 `xeCJK` 可用`\setCJKmainfont{SimSun}` 来调用系统字体 下面是底层调用中英文混排
 
-|- ctex 包含早期CTT CJK 及 xeCJK 可用\setCJKmainfont{SimSun} 来调用系统字体 下面是底层调用中英文混排
 ### 实例讲解
 
-> \documentclass[12pt,a4paper]{article}
-  \usepackage{xltxtra,fontspec,xunicode}
-  \usepackage[slantfont,boldfont]{xeCJK} % 允许斜体和粗体
-  \setCJKmainfont{FZJingLeiS-R-GB}   % 设置缺省中文字体 徐静蕾字体
-  \setCJKmonofont{SimSun}   % 设置等宽字体
-  \setmainfont{TeX Gyre Pagella} % 英文衬线字体
-  \setmonofont{Monaco} % 英文等宽字体
-  \setsansfont{Trebuchet MS} % 英文无衬线字体
+```
+\documentclass[12pt,a4paper]{article}
+\usepackage{xltxtra,fontspec,xunicode}
+\usepackage[slantfont,boldfont]{xeCJK} % 允许斜体和粗体
+\setCJKmainfont{FZJingLeiS-R-GB}   % 设置缺省中文字体 
+\setCJKmonofont{SimSun}   % 设置等宽字体
+\setmainfont{TeX Gyre Pagella} % 英文衬线字体
+\setmonofont{Monaco} % 英文等宽字体
+\setsansfont{Trebuchet MS} % 英文无衬线字体
+```
 
 ## tex常见问题
 
@@ -143,16 +139,15 @@ Donald Knuth
 
 |- 数学公式
 
-段落中放于 \( 和 \)， $ 和 $ 或者 \begin{math} 和\end{math}单独一行可放于 \[ 和 \] 或 \begin{displaymath} 和 \end{displaymath}带编号可放于equation数学模式中
+段落中放于 `\(` 和 `\)`， `$` 和 `$` 或者 `\begin{math}` 和 `\end{math}` 单独一行可放于 `\[` 和 `\]` 或 `\begin{displaymath}` 和 `\end{displaymath}`带编号可放于equation数学模式中
 
-1. 空格和分行都将被忽略。所有的空格或是由数学表达式逻辑的衍生，
-或是由特殊的命令如 \,，\quad 或 \qquad 来得到。
+1. 空格和分行都将被忽略。所有的空格或是由数学表达式逻辑的衍生，或是由特殊的命令如 `\`,，`\quad` 或 `\qquad` 来得到。
 
 2. 不允许有空行，每个公式中只能有一个段落。
 
-3. 每个字符都将被看作是一个变量名并以此来排版。如果你希望在公式中出现普通的文本（使用正体字并可以有空格），那么你必须使用命令 \textrm{...} 来输入这些文本。
+3. 每个字符都将被看作是一个变量名并以此来排版。如果你希望在公式中出现普通的文本（使用正体字并可以有空格），那么你必须使用命令 `\textrm{...}` 来输入这些文本。
 
-|- \newtheorem{name}[counter]{text}[section]定理环境name 是短关键字，用于标识“定理”。text 定义“定理”的真实名称，会在最终文件中打印出来。
+|- `\newtheorem{name}[counter]{text}[section]`定理环境name 是短关键字，用于标识“定理”。`text` 定义“定理”的真实名称，会在最终文件中打印出来。
 
 |- 建立新命令
 
