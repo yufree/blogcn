@@ -5,22 +5,22 @@ title: "Kaggle 入门：泰坦尼克号幸存者项目"
 
 ## 背景
 
-[Kaggle](https://www.kaggle.com)是一个线上数据科学竞赛类网站。简单说，上面会提供数据与需求，目的是构建一个$f(x) = y$的模型。参赛者会得到一个有$x$与$y$的训练集与只有$x$的测试集，你需要在训练集上构建模型，输入测试集的$x$得到你预测的$y$。之后你需要提交你的$y$到Kaggle，它会计算一个正确率作为竞赛的评判标准，分数高的会有奖金或仅仅是个荣誉。对于入门者，Kaggle提供了一个泰坦尼克号幸存者项目作为入手项目，项目提供的数据就是泰坦尼克号上乘客的信息与其幸存状况数据，以上为背景。
+[Kaggle](https://www.kaggle.com)是一个线上数据科学竞赛类网站。简单说，上面会提供数据与需求，目的是构建一个$$f(x) = y$$的模型。参赛者会得到一个有$$x$$与$$y$$的训练集与只有$$x$$的测试集，你需要在训练集上构建模型，输入测试集的$$x$$得到你预测的$$y$$。之后你需要提交你的$$y$$到Kaggle，它会计算一个正确率作为竞赛的评判标准，分数高的会有奖金或仅仅是个荣誉。对于入门者，Kaggle提供了一个泰坦尼克号幸存者项目作为入手项目，项目提供的数据就是泰坦尼克号上乘客的信息与其幸存状况数据，以上为背景。
 
 ## 数据准备
 
 名为train.csv的训练集数据与test.csv的测试集数据可从网站上下载，请将其移动到工作目录并读取。
 
 
-```r
+~~~
 # 读取数据
 train <- read.csv('train.csv')
 test <- read.csv('test.csv')
 # 观察数据结构
 str(train)
-```
+~~~
 
-```
+~~~
 ## 'data.frame':	891 obs. of  12 variables:
 ##  $ PassengerId: int  1 2 3 4 5 6 7 8 9 10 ...
 ##  $ Survived   : int  0 1 1 1 0 0 0 0 1 1 ...
@@ -34,13 +34,13 @@ str(train)
 ##  $ Fare       : num  7.25 71.28 7.92 53.1 8.05 ...
 ##  $ Cabin      : Factor w/ 148 levels "","A10","A14",..: 1 83 1 57 1 1 131 1 1 1 ...
 ##  $ Embarked   : Factor w/ 4 levels "","C","Q","S": 4 2 4 4 4 3 4 4 4 2 ...
-```
+~~~
 
-```r
+~~~
 str(test)
-```
+~~~
 
-```
+~~~
 ## 'data.frame':	418 obs. of  11 variables:
 ##  $ PassengerId: int  892 893 894 895 896 897 898 899 900 901 ...
 ##  $ Pclass     : int  3 3 2 3 3 3 3 2 3 3 ...
@@ -53,53 +53,53 @@ str(test)
 ##  $ Fare       : num  7.83 7 9.69 8.66 12.29 ...
 ##  $ Cabin      : Factor w/ 77 levels "","A11","A18",..: 1 1 1 1 1 1 1 1 1 1 ...
 ##  $ Embarked   : Factor w/ 3 levels "C","Q","S": 2 3 2 3 3 3 2 3 1 3 ...
-```
+~~~
 
-```r
+~~~
 # 观察输出
 table(train$Survived)
-```
+~~~
 
-```
+~~~
 ## 
 ##   0   1 
 ## 549 342
-```
+~~~
 
 ## 根据输出的预测
 
 初步探索可知，我们的自变量有11个，因变量为二元输出。因为活下来的要多过幸存的，我们最保守的模型是基于输出的，也就是预测测试集上的乘客都没幸存。提交，正确率63%，目前估计要排到2000+。
 
 
-```r
+~~~
 test$Survived <- rep(0, 418)
 # 按照Kaggle要求构建数据框
 submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Survived)
 # 写为csv文件
 write.csv(submit, file = "alldie.csv", row.names = F)
-```
+~~~
 
 ## 考虑单一分类变量
 
 OK，现在我们开始考虑使用自变量来进行预测，先考虑分类变量性别。
 
 
-```r
+~~~
 # 构建分类列连表
 prop.table(table(train$Sex, train$Survived))
-```
+~~~
 
-```
+~~~
 ##         
 ##                   0          1
 ##   female 0.09090909 0.26150393
 ##   male   0.52525253 0.12233446
-```
+~~~
 
 第一个模型预测了全部死亡，现在我们看到如果性别为女性，幸存概率要高很多，那么考虑这个变量后我们就在第一个模型基础上预测如果性别为女就能活下来。
 
 
-```r
+~~~
 # 第一个模型
 test$Survived <- 0
 # 考虑性别变量
@@ -108,7 +108,7 @@ test$Survived[test$Sex == 'female'] <- 1
 submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Survived)
 # 写为csv文件
 write.csv(submit, file = "alldiebutfemale.csv", row.names = F)
-```
+~~~
 
 OK，目前正确率77%，大概排1800+。
 
@@ -117,36 +117,36 @@ OK，目前正确率77%，大概排1800+。
 我们现在考虑下连续变量年龄，看看分布。
 
 
-```r
+~~~
 # 绘制直方图
 hist(train$Age)
-```
+~~~
 
-![plot](figure/titanichist.png) 
+![plot](http://yufree.github.io/blogcn/figure/titanichist.png) 
 
 按照当年看过的电影，妇女，老人，小孩应该是优先上救生船的，因此我们认为小于20岁跟大于60岁的乘客更容易幸存，探索下。
 
 
-```r
+~~~
 train$oldchild <- 0
 # 提取老弱
 train$oldchild[train$Age < 20 | train$Age > 60] <- 1
 # 看看女性部分
 aggregate(Survived ~ oldchild + Sex, data=train, FUN=sum)
-```
+~~~
 
-```
+~~~
 ##   oldchild    Sex Survived
 ## 1        0 female      177
 ## 2        1 female       56
 ## 3        0   male       81
 ## 4        1   male       28
-```
+~~~
 
 额，似乎不太对，好像老幼女性死的更多，看来电影与事实有出入，那么我们反着预测试试。
 
 
-```r
+~~~
 # 第一个模型
 test$Survived <- 0
 # 考虑性别变量
@@ -157,7 +157,7 @@ test$Survived[test$Sex == 'female' & (test$Age < 20 | test$Age > 60)] <- 0
 submit <- data.frame(PassengerId = test$PassengerId, Survived = test$Survived)
 # 写为csv文件
 write.csv(submit, file = "alldiebutfemalemiddleage.csv", row.names = F)
-```
+~~~
 
 额，正确率73%，比刚才低了。回想一下，我刚才做的不过就是不断的分组，甚至是连续变量分组，这样到一定程度就会数据稀疏到欠拟合。同时因为分组中另一组简单认为幸存或不幸存也造成了较大偏差，所以整个模型都不好了。如果我们深入回想，现在需要的是一点过拟合，通过不断分类来确定最终分类其实就是种了一颗决策树，那么我们应该试试决策树。
 
@@ -166,24 +166,24 @@ write.csv(submit, file = "alldiebutfemalemiddleage.csv", row.names = F)
 决策树的原理很简单，就是不断寻找能将数据分成区别最大的两块的阈值，然后再到下一层去迭代寻找，直到你的子分类中全是一样的输出。具体到这个例子，我们需要考虑用那些变量：PassengerId没啥意义；Name也看不出跟输出有什么显性联系；Ticket上的编码长得像密码，不要；Cabin数据残缺严重，不要；Embarked是上船位置，似乎跟沉船也没啥关系，不要。上面是一个主观变量的筛选，其实如果依赖专业知识会更快，当然也有基于统计学的变量筛选，暂时不提。决策树你就看作$f$就可以了，算法别人都写好了。
 
 
-```r
+~~~
 # rpart包里的函数要比tree好些
 library(rpart)
 fit <- rpart(Survived ~ Pclass + Sex + Age + SibSp + Parch + Fare, data=train, method="class")
 plot(fit)
 text(fit)
-```
+~~~
 
-![plot](figure/titanictree.png) 
+![plot](http://yufree.github.io/blogcn/figure/titanictree.png) 
 
 从结果上看，第一变量是性别：对男性而言，年龄是第二分割点；对女性而言，仓位则成了第二分割点，所以决策树的分割相对还是比较精细的。我们用预测函数得到结果看看：
 
 
-```r
+~~~
 Prediction <- predict(fit, test, type = "class")
 submit <- data.frame(PassengerId = test$PassengerId, Survived = Prediction)
 write.csv(submit, file = "tree.csv", row.names = FALSE)
-```
+~~~
 
 这次正确率达到了79%，光荣挺进前1000。
 
@@ -198,7 +198,7 @@ write.csv(submit, file = "tree.csv", row.names = FALSE)
 基于决策树的算法中有种叫做随机森林的算法效能不错，其逻辑在于随机抓一把变量来生成决策树，重复多次，然后对结果取均值或投票。这样就相当于加了一个惩罚函数，要知道决策树是没有惩罚而只能通过交叉检验来提高效能。这里面age的缺失比较重，为了去除缺失值，我们可以考虑用其他变量建个决策树补一下空白。
 
 
-```r
+~~~
 # tree 补下age的缺失值
 Agefit <- rpart(Age ~ Pclass + Sex + SibSp + Parch + Fare,
                 data=train[!is.na(train$Age),], method="anova")
@@ -210,6 +210,6 @@ submit0 <- data.frame(PassengerId = test$PassengerId, Survived = Prediction)
 # 预测出的缺失值用决策树结果充数 这可看作模型嵌套
 submit0[is.na(submit0$Survived),2] <- submit[is.na(submit0$Survived),2]
 write.csv(submit, file = "randomforest.csv", row.names = FALSE)
-```
+~~~
 
 结果跟决策树差不多，不过这种01输出的数据结构其实也可以用广义线性模型中的logistic回归来做。或者你也可以尝试人工神经网络，支持向量机，岭回归，lasso什么的，等你都尝试一遍后基本该遇到的情况就都遇到了，那个时候就该尝试进军其他挑战了。
