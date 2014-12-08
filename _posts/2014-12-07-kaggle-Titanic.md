@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Kaggle 入门：泰坦尼克号幸存者项目"
+title: Kaggle 入门：泰坦尼克号幸存者项目
 ---
 
 ## 背景
