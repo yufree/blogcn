@@ -23,7 +23,7 @@ layout: page
 
 - [豆瓣](http://www.douban.com/people/yufree/): 兴趣爱好都在上面
 
-- [MOOC笔记](http://rpubs.com/yufree): 公开课笔记 亦可参见博客笔记板块
+- [自学笔记](http://yufree.github.io/notes): 亦可参见博客笔记板块 实质等同
 
 - [Github](https://github.com/yufree): 伪码农是我另一个身份
 
