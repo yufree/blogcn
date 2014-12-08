@@ -15,7 +15,7 @@ layout: page
 
 - [ResearchGate](https://www.researchgate.net/profile/Miao_Yu21): 追随导师的脚步
 
-- [linkedin](cn.linkedin.com/pub/miao-yu/67/b6a/a8b/): 要是按期毕业就去找个博后
+- [linkedin](cn.linkedin.com/pub/yufree): 要是按期毕业就去找个博后
 
 ---
 
@@ -23,7 +23,7 @@ layout: page
 
 - [豆瓣](http://www.douban.com/people/yufree/): 兴趣爱好都在上面
 
-- [MOOC笔记](http://rpubs.com/yufree): 公开课笔记
+- [MOOC笔记](http://rpubs.com/yufree): 公开课笔记 亦可参见博客笔记板块
 
 - [Github](https://github.com/yufree): 伪码农是我另一个身份
 
