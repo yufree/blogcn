@@ -94,10 +94,10 @@ title: 简历
 
 ### 实用新型
 
-- [高效率太阳能供电器](http://www.google.com.hk/patents/CN201004609Y?cl=zh) 第一发明人
+- [高效率太阳能供电器](https://www.google.com.hk/patents/CN201004609Y) 第一发明人
 
 ### 发明
 
-- [氯化锌改性赤泥的制备方法](http://www.google.com.hk/patents/CN101559353B?cl=zh) 第三发明人
+- [氯化锌改性赤泥的制备方法](http://www.google.com.hk/patents/CN101559353B) 第三发明人
 
-- [螺旋悬挂式赤泥膜袋吸附除磷装置](https://www.google.com.hk/patents/CN101456602B?cl=zh) 第六发明人
+- [螺旋悬挂式赤泥膜袋吸附除磷装置](https://www.google.com.hk/patents/CN101456602B) 第六发明人
