@@ -15,7 +15,7 @@ title: 笔记
 
 - [统计学框架](http://yufree.github.io/notes/statistics.html)
 - [基因组学数据分析](http://yufree.github.io/notes/biognomes.html)
-- [统计学习笔记repo](https://github.com/yufree/ISLRchnotes)
+- [统计学习笔记](https://github.com/yufree/ISLRchnotes)
 
 ## 其他
 
