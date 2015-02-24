@@ -15,7 +15,7 @@ layout: page
 
 - [ResearchGate](https://www.researchgate.net/profile/Miao_Yu21): 追随导师的脚步
 
-- [linkedin](cn.linkedin.com/pub/yufree): 要是按期毕业就去找个博后
+- [linkedin](https://www.linkedin.com/in/yufree): 要是按期毕业就去找个博后
 
 ---
 
