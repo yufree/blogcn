@@ -28,12 +28,12 @@ body
 }
 a
 {
-    color:#6bbbd8;
-    text-decoration:none;
+    color:#323031;
+    text-decoration:underline;
 }
 a:hover
 {
-    color:#6bbbd8;
+    color:#848a91;
     text-decoration:underline;
 }
 hr
