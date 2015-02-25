@@ -29,7 +29,7 @@ body
 a
 {
     color:#323031;
-    text-decoration:none;
+    text-decoration:underline;
 }
 a:hover
 {
@@ -95,6 +95,7 @@ blockquote p
 {
     font-size:16px;
     line-height:24px;
+    text-decoration:none;
 }
 .content h1
 {
@@ -143,6 +144,7 @@ nav a
     padding:.7em 1em;
     color:#323031;
     font-weight: 900;
+    text-decoration:none;
 }
 nav a:hover
 {
@@ -188,11 +190,6 @@ embed,object,iframe
 {
     display:block;
     margin:4px auto;
-}
-a
-{
-    color:#323031;
-    text-decoration:underline;
 }
 .gist
 {
