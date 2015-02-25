@@ -29,7 +29,7 @@ body
 a
 {
     color:#323031;
-    text-decoration:underline;
+    text-decoration:none;
 }
 a:hover
 {
@@ -156,10 +156,9 @@ nav a:hover
     color:#323031;
     -webkit-transition:color .2s linear;
 }
-.post
-{padding:.5em 0em;}
-.post a
+a.post 
 {
+    padding:.5em 0em;
     text-decoration:underline;
 }
 h1
