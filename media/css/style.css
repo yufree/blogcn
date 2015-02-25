@@ -189,6 +189,11 @@ embed,object,iframe
     display:block;
     margin:4px auto;
 }
+a
+{
+    color:#323031;
+    text-decoration:underline;
+}
 .gist
 {
     font-size: 14px;
