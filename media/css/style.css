@@ -95,7 +95,6 @@ blockquote p
 {
     font-size:16px;
     line-height:24px;
-    text-decoration:none;
 }
 .content h1
 {
@@ -159,6 +158,10 @@ nav a:hover
 }
 .post
 {padding:.5em 0em;}
+.post a
+{
+    text-decoration:underline;
+}
 h1
 {
     font-family:"Cuprum","Hiragino Sans GB","Microsoft YaHei",sans-serif;
