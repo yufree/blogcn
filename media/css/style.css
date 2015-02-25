@@ -100,10 +100,6 @@ blockquote p
 {
     padding:.5em 0;
 }
-.content a
-{
-    text-decoration:none;
-}
 .content img
 {
     max-width:600px;
@@ -114,13 +110,22 @@ blockquote p
     box-shadow:#999 1px 1px 4px;
 }
 .listing-item,.listing-seperator
-{list-style-type:none;}
+{
+    list-style-type:none;
+}
 .listing-item a
-{padding:.2em 1em;}
+{
+    padding:.2em 1em;
+    text-decoration:none;
+}
 .listing-item time
-{color:#999999;}
+{
+    color:#999999;
+}
 .listing-seperator
-{font-weight:bold;}
+{
+    font-weight:bold;
+}
 .meta
 {
     text-align:right;
@@ -155,11 +160,6 @@ nav a:hover
     text-decoration:none;
     color:#323031;
     -webkit-transition:color .2s linear;
-}
-a.post 
-{
-    padding:.5em 0em;
-    text-decoration:underline;
 }
 h1
 {
