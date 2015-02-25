@@ -101,7 +101,6 @@ nav a
 {
     display:block;
     padding:.7em 1em;
-    color:#323031;
     font-weight: 900;
     text-decoration:none;
 }
@@ -109,7 +108,6 @@ nav a:hover
 {
     background-color:#c8d0d3;
     text-decoration:none;
-    color:#323031;
     -webkit-transition:color .2s linear;
 }
 h1
@@ -143,7 +141,7 @@ pre,code
 }
 code
 {
-    background-color:#848a91;
+    background-color:#e2e6e2;
 }
 em,object,iframe
 {
