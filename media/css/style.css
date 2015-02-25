@@ -108,6 +108,7 @@ nav a:hover
 {
     background-color:#c8d0d3;
     text-decoration:none;
+    color:#323031;
     -webkit-transition:color .2s linear;
 }
 h1
