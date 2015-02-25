@@ -101,6 +101,10 @@ blockquote p
 {
     padding:.5em 0;
 }
+.content a
+{
+    text-decoration:none;
+}
 .content img
 {
     max-width:600px;
