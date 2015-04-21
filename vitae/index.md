@@ -30,6 +30,8 @@ title: 简历
 ## 报告
 
 - 于淼,2014,多溴联苯醚气相色谱保留时间的模型预测与选择, 第十届全国生物医药色谱及相关技术学术交流会(威海).([幻灯片](https://github.com/yufree/presentation/blob/master/20140420weihai.pdf),[shinyBDE](https://github.com/yufree/shinyBDE))
+- 于淼,2014,环境数据的阈值探索, 第二届环境污染与健康研究生论坛(北京). ([幻灯片](http://yufree.github.io/presentation/threshold/threshold))
+- 于淼,2015,单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会(上海).
 
 ## 计算机水平
 
@@ -68,6 +70,20 @@ title: 简历
 ## 软件包
 
 - [R包 - rgabriel](http://cran.r-project.org/web/packages/rgabriel/index.html): Gabriel多重比较及其可视化
+
+## 会议论文
+
+- Jiyan Liu*, Jianteng Sun, Miao Yu, Guibin Jiang. Uptake, translocation and transformation of polybrominated diphenyl ethers in whole pumpkin seedlings. 32nd International Symposium on Halogenated Persistent Organic Pollutants, Cairns, Australia, 2012.8.26-31, G8.103
+
+- 于淼, 刘稷燕，BDE-28在南瓜中的富集行为研究, 第九届全国生物医药色谱会议, 2012, 重庆, 中国
+
+- 于淼, 刘稷燕, 多溴联苯醚植物代谢产物分析方法的建立及应用, 第七届环境化学大会, 2013, 贵阳, 中国
+
+- 于淼, 多溴联苯醚气相色谱保留时间的模型预测与选择, 2014, 威海, 中国（口头报告）
+
+- 于淼,环境数据的阈值探索, 第二届环境污染与健康研究生论坛, 2014, 北京, 中国 (口头报告)
+
+- 于淼, 单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会, 2015, 上海, 中国 (口头报告)
 
 ## 授权专利
 
