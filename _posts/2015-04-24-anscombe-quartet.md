@@ -47,14 +47,14 @@ par(mfrow=c(1,2))
   boxplot(bimodal,uniform,normal)
 ~~~
 
-![](http://yufree.github.io/blogcn/figure/vioplot.PNG)
+![](http://yufree.github.io/blogcn/figure/vioplot.png)
 
 - 差异散点图
 
 ~~~ r
 # 这个太简单了，就是当要展示的两组数据为配对数据时，直接对其差异作普通散点图并附上参考线
 ~~~
-![](http://yufree.github.io/blogcn/figure/drr2.PNG)
+![](http://yufree.github.io/blogcn/figure/drr2.png)
 
 - 抖动散点图
 
@@ -66,7 +66,7 @@ plot(number1,number2)
 plot(jitter(number1),jitter(number2))
 ~~~
 
-![](http://yufree.github.io/blogcn/figure/jitter.PNG)
+![](http://yufree.github.io/blogcn/figure/jitter.png)
 
 - 平滑散点图
 
@@ -77,7 +77,7 @@ number2 <- rhyper(30,4,5,4)
 smoothScatter(number1,number2)
 ~~~
 
-![](http://yufree.github.io/blogcn/figure/smplot.PNG)
+![](http://yufree.github.io/blogcn/figure/smplot.png)
 
 其实数据展示在能表意清晰的条件下越原始越好，这样能更好的展示原始数据的意义，如果加入过多的总结性描述，总有种隐藏信息的感觉。
 
