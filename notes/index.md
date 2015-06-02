@@ -27,6 +27,7 @@ title: 笔记
 - [地理信息系统与R](http://yufree.cn/rgis)
 - [抑郁症](http://yufree.cn/notes/depression.html)
 - [字体故事](http://yufree.cn/notes/font.html)
+- [中国古代史](http://yufree.cn/notes/historyCN.html)
 - [中医药](http://yufree.cn/notes/tcm.html)
 - [摄影术](http://yufree.cn/notes/camera.html)
 
