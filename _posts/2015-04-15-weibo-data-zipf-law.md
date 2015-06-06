@@ -39,8 +39,6 @@ doc8 <- tm_map(doc7, stripWhitespace)
 # 构建全范围的词频矩阵
 control=list(minDocFreq=5,wordLengths = c(1, Inf),bounds = list(global = c(5,Inf)),weighting = weightTf,encoding = 'UTF-8')
 doc.tdm=TermDocumentMatrix(doc8,control)
-colnames(doc.tdm)
-findFreqTerms(doc.tdm, 1000)
 # 这里截取词频高于5长度为2的词
 control2=list(minDocFreq=5,wordLengths = c(2, 2),bounds = list(global = c(5,Inf)),weighting = weightTf,encoding = 'UTF-8')
 doc.tdm2=TermDocumentMatrix(doc8,control2)
@@ -61,9 +59,6 @@ freq3 <- rowapply_simple_triplet_matrix(doc.tdm3,sum)
 freq4 <- rowapply_simple_triplet_matrix(doc.tdm4,sum)
 freq5 <- rowapply_simple_triplet_matrix(doc.tdm5,sum)
 # save(freq,freq2,doc8,file ='constellation.RData')
-# 观察结果
-head(freq[order(freq,decreasing = T)],100)
-head(freq2[order(freq2,decreasing = T)],100)
 # 验证齐普夫定律
 order <- order(freq[order(freq,decreasing = T)],decreasing = T)
 freq0 <- freq[order(freq,decreasing = T)]
