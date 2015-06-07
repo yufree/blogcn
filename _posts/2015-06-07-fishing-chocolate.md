@@ -3,9 +3,9 @@ layout: post
 title: 科研钓鱼-巧克力减肥事件
 ---
 
-> Every day is April Fool’s in nutrition.
-
 不想读全文可以直接看文末结论。
+
+> Every day is April Fool’s in nutrition.
 
 John Bohannon拥有细菌分子生物学博士学位，同时他也是有着科研钓鱼恶趣味的记者。2013年，这货为了测试开放获取的期刊是不是给钱就发文章，特意写了一大堆狗屁不通的论文投给开放获取期刊，然后发现只有不到一半的期刊据稿了。他将这个结果发表在[science](http://www.sciencemag.org/content/342/6154/60.full)上，引发了一连串关于开放获取期刊价值的讨论。
 
