@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 科研钓鱼——巧克力减肥事件
+title: 科研钓鱼-巧克力减肥事件
 ---
 
 > Every day is April Fool’s in nutrition.
