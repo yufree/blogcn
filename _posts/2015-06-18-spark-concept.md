@@ -60,9 +60,9 @@ filter及与Hadoop类似的map功能是属于transformations的，也就是说�
 
 ~~~python
 # 从python list里构建
-data	=	[1,	2,	3,	4,	5]
+data = [1,2,3,4,5]
 # 这个构建行为不是actions，只是指定构建方式，包括分发数
-RDD	= sc.parallelize(data,	4)
+RDD = sc.parallelize(data,4)
 # 从Hadoop输入格式建立
 distFile = sc.textFile("README.md", 4)
 ~~~
@@ -73,12 +73,12 @@ distFile = sc.textFile("README.md", 4)
 # 构建RDD
 rdd	=	sc.parallelize([1,2,2,4])
 # 用python的lambda函数来构建映射
-rdd.map(lambda	x:	x	*	2)
+rdd.map(lambda x: x * 2)
 # RDD:	[1,2,2,4] → [2,4,4,8]	
-rdd.filter(lambda	x:	x	%	2	==	0)
-# RDD:  [1,2,2,4] → [2,2,4]
+rdd.filter(lambda x: x % 2 == 0)
+# RDD: [1,2,2,4] → [2,2,4]
 rdd.distinct()	
-# RDD:  [1,2,2,4] → [1,2,4]
+# RDD: [1,2,2,4] → [1,2,4]
 ~~~
 
 从这里我们可以看出这个操作非常类似R中对数据框的操作，但因为是lazy的，没有action命令它们不会实际被执行。
@@ -86,13 +86,13 @@ rdd.distinct()
 ### RDD的action与lambda函数
 
 ~~~python
-rdd	=	sc.parallelize([1,	2,	3])
-rdd.reduce(lambda	a,	b:	a	*	b)	
-# Value:	6
+rdd = sc.parallelize([1,2,3])
+rdd.reduce(lambda a,b: a*b)	
+# Value: 6
 rdd.take(2)
-# Value:	[1,2]	
+# Value: [1,2]	
 rdd.collect()	
-# Value:	[1,2,3]	
+# Value: [1,2,3]	
 ~~~
 Spark的一大优点在于比Hadoop提供了更多的操作，这一点需要详查文档体会。
 
@@ -100,7 +100,7 @@ Spark的一大优点在于比Hadoop提供了更多的操作，这一点需要详
 
 ~~~python
 # driver端	
-broadcastVar	=	sc.broadcast([1,	2,	3])	
+broadcastVar = sc.broadcast([1,2,3])	
 # worker端
 broadcastVar.value
 # [1,2,3]
@@ -109,12 +109,12 @@ broadcastVar.value
 ### Accumulators
 
 ~~~python
-accum	=	sc.accumulator(0)	
-rdd	=	sc.parallelize([1,	2,	3,	4])	
-def	f(x):	
-  global accum
-	accum	+= x			
+accum = sc.accumulator(0)	
+rdd = sc.parallelize([1,2,3,4])	
+def f(x):	
+ global accum
+ accum += x			
 rdd.foreach(f)	
 accum.value
-# Value:	10	
+# Value: 10	
 ~~~
