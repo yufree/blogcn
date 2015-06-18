@@ -71,7 +71,7 @@ distFile = sc.textFile("README.md", 4)
 
 ~~~python
 # 构建RDD
-rdd	=	sc.parallelize([1,2,2,4])
+rdd = sc.parallelize([1,2,2,4])
 # 用python的lambda函数来构建映射
 rdd.map(lambda x: x * 2)
 # RDD:	[1,2,2,4] → [2,4,4,8]	
