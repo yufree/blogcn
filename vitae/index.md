@@ -25,13 +25,14 @@ title: 简历
 
 ## 工作经历
 
-- 2014年9月至2014年12月 美国化学会(ACS) 初级分析师（兼职）
+- 2014年9月至2015年12月 美国化学会(ACS) 初级分析师（兼职）
 
 ## 报告
 
 - 于淼,2014,多溴联苯醚气相色谱保留时间的模型预测与选择, 第十届全国生物医药色谱及相关技术学术交流会(威海).([幻灯片](https://github.com/yufree/presentation/blob/master/20140420weihai.pdf),[shinyBDE](https://github.com/yufree/shinyBDE))
 - 于淼,2014,环境数据的阈值探索, 第二届环境污染与健康研究生论坛(北京). ([幻灯片](http://yufree.github.io/presentation/threshold/threshold))
 - 于淼,2015,单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会(上海).
+- Miao Yu, 2015, Organic Stable Isotope Analysis with GC-qMS for PBDEs in a molecular view, Isotopes 2015(Jerusalem, Israel).
 
 ## 计算机水平
 
