@@ -54,7 +54,7 @@ title: 简历
 
 - Yu, M., Liu, J., Wang, T., Sun, J., Liu, R., & Jiang, G. (2013). Metabolites of 2,4,4’-tribrominated diphenyl ether (BDE-28) in pumpkin after in vivo and in vitro exposure. Environmental Science & Technology, 47(23), 13494–501. 
 
-- Liu, A. F., Tian, Y., Yin, N. Y., Yu, M., Qu, G. B., Shi, J. B., ... Jiang, G. B. (2015). Characterization of Three Tetrabromobisphenol-S Derivatives in Mollusks from Chinese Bohai Sea: A Strategy for Novel Brominated Contaminants Identification. Scientific reports, 5, 11741.
+- Liu, A., Tian, Y., Yin, N., Yu, M., Qu, G., Shi, J., … Jiang, G. (2015). Characterization of Three Tetrabromobisphenol-S Derivatives in Mollusks from Chinese Bohai Sea: A Strategy for Novel Brominated Contaminants Identification. Scientific reports, 5, 11741.
 
 - Zhang, H., Wang, Y., Sun, C., Yu, M., Gao, Y., Wang, T., … Jiang, G. (2014). Levels and distributions of hexachlorobutadiene and three chlorobenzenes in biosolids from wastewater treatment plants and in soils within and surrounding a chemical plant in China. Environmental Science & Technology, 48(3), 1525–31.
 
