@@ -27,7 +27,7 @@ layout: page
 
 - [知乎专栏](http://zhuanlan.zhihu.com/yufree): 土鳖的论文修养
 
-- [摄影](http://yufree.lofter.com/): 半瓶醋水平 从点点转乐乎 同步Instagram
+- [摄影](https://instagram.com/yufree/): 半瓶醋水平 从点点转乐乎最后落脚Instagram
 
 - [读书笔记](https://yufreecas.blogspot.com/): 沥青下滴速更新
 

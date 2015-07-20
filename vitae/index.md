@@ -78,7 +78,7 @@ title: 简历
 
 - Jiyan Liu*, Jianteng Sun, Miao Yu, Guibin Jiang. Uptake, translocation and transformation of polybrominated diphenyl ethers in whole pumpkin seedlings. 32nd International Symposium on Halogenated Persistent Organic Pollutants, Cairns, Australia, 2012.8.26-31, G8.103
 
-- 于淼, 刘稷燕，BDE-28在南瓜中的富集行为研究, 第九届全国生物医药色谱会议, 2012, 重庆, 中国
+- 于淼, 刘稷燕, BDE-28在南瓜中的富集行为研究, 第九届全国生物医药色谱会议, 2012, 重庆, 中国
 
 - 于淼, 刘稷燕, 多溴联苯醚植物代谢产物分析方法的建立及应用, 第七届环境化学大会, 2013, 贵阳, 中国
 
@@ -87,6 +87,8 @@ title: 简历
 - 于淼,环境数据的阈值探索, 第二届环境污染与健康研究生论坛, 2014, 北京, 中国 (口头报告)
 
 - 于淼, 单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会, 2015, 上海, 中国 (口头报告)
+
+- Miao Yu, Jiyan Liu, Guibin Jiang. 2015, Organic Stable Isotope Analysis with GC-qMS for PBDEs in a molecular view, Isotopes 2015, Jerusalem, Israel (口头报告)
 
 ## 授权专利
 
