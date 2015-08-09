@@ -21,6 +21,7 @@ title: 笔记
 ## 其他
 
 - [latex入门](http://yufree.cn/notes/latex.html)
+- [流行病学](http://yufree.cn/notes/epidemiologyintro.html)
 - [生物信息学](http://yufree.cn/notes/Bioinformatics.html)
 - [化学品与健康](http://yufree.cn/notes/ChemHealth.html)
 - [心理学导论](http://yufree.cn/notes/psychology.html)
