@@ -24,7 +24,7 @@ title: 理解基因组数据分析之数据读取与数据结构篇
 
 下面用Affy包为例，演示下读取数据。
 
-```{r}
+~~~
 # 安装bioconductor与affy包
 # source("http://bioconductor.org/biocLite.R")
 # biocLite()
@@ -38,7 +38,7 @@ ab <- ReadAffy(phenoData = tab)
 ejust <- justRMA(filenames = tab[, 1], phenoData = tab) 
 # 对样本进行背景校正与正则化，从探针层转化为基因层数据
 e <- rma(ab)
-```
+~~~
 
 原始的数据就是探针水平的光信号，也就是CEL文件，这个读取后要做背景矫正，矫正了背景要正则化，如果你有spike-in的探针也可以进行一把基于探针的背景矫正，都做完了就可以连同矫正后的误差等信息一并保存到一个ExpressionSet类型对象（Bioconductor里的基因芯片基础数据类型）中等待进一步处理。
 
@@ -56,12 +56,12 @@ a表示低浓度截距，x表示浓度，b是浓度系数。这样低浓度时a�
 
 ExpressionSet是Bioconductor为了衔接后续的基因芯片表达数据分析包提供了一个通用的数据类型，也是eSet对象的一个类。不管哪一家的芯片都要转成这个类型才好进行下一步分析，这样做的原因往往是方便后续分析的开发人员，也便于提供统一接口。用R语言说就是可以直接为ExpressionSet对象写方法，而不用对每一家公司都提供数据格式支持，当然可能损失点效率，只是可能。
 
-```{r}
+~~~
 # 读取Biobase包与示例数据，该包提供一些对ExpressionSet类型对象的基础操作
 library(Biobase)
 data(sample.ExpressionSet)
 sample.ExpressionSet
-```
+~~~
 
 这个类型有如下要求：
 
