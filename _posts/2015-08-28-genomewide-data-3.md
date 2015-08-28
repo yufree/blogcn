@@ -13,16 +13,16 @@ Y是响应，假设有两组，我们给组A赋值1，组B赋值0，那么系数
 
 下面运行下代码看看
 
-```r
+~~~
 # 模拟生成两组数据
 set.seed(42)
 group1 <- rnorm(100,100,10)
 group2 <- rnorm(100,130,13)
 # 进行t检验
 t.test(group1,group2)
-```
+~~~
 
-```
+~~~
 ## 
 ## 	Welch Two Sample t-test
 ## 
@@ -34,9 +34,9 @@ t.test(group1,group2)
 ## sample estimates:
 ## mean of x mean of y 
 ##  100.3251  128.8627
-```
+~~~
 
-```r
+~~~
 # 构建分组变量
 fac <- c(rep(0,100),rep(1,100))
 # 构建数据变量
@@ -44,9 +44,9 @@ dat <- c(group1,group2)
 # 回归分析
 fit <- lm(dat~fac)
 summary(fit)
-```
+~~~
 
-```
+~~~
 ## 
 ## Call:
 ## lm(formula = dat ~ fac)
@@ -65,7 +65,7 @@ summary(fit)
 ## Residual standard error: 11.1 on 198 degrees of freedom
 ## Multiple R-squared:  0.6252,	Adjusted R-squared:  0.6233 
 ## F-statistic: 330.2 on 1 and 198 DF,  p-value: < 2.2e-16
-```
+~~~
 
 上面我们可以看到fac的参数估计得到的t值与t检验是一样的，截距也就是组B的均值，而斜率则是组A与组B的差。由此我们可以看到t检验可以看作线性回归针对两组变量的一个特例。而进入线性回归领域我们可以做的东西就多了，例如我们平时所说的单因素方差分析与多重比较本质上就是线性回归针对多组变量的特例。而线性回归更多是用在处理连续变量的，那么本质上你的分组也可以是连续的。扯远了，在基因组相关分析上我们引入回归分析多半不是针对样本分组的，而是用来平衡影响因素的。
 
@@ -80,25 +80,10 @@ $$Y = \alpha * X + \gamma * Year + \beta$$
 下面用人种分性别数据来观察下这个问题，我们已知的混杂变量是测定时间，分组变量是性别。
 
 
-```r
+~~~
 # 安装bioconductor
 source("http://bioconductor.org/biocLite.R")
-```
-
-```
-## Bioconductor version 3.1 (BiocInstaller 1.18.4), ?biocLite for help
-```
-
-```r
 biocLite()
-```
-
-```
-## BioC_mirror: http://bioconductor.org
-## Using Bioconductor version 3.1 (BiocInstaller 1.18.4), R version 3.2.2.
-```
-
-```r
 # 安装绘图用的rafalib包跟RcolorBrewer包还有示例的GSE5859Subset数据集
 # install.packages('rafalib')
 # install.packages('RColorBrewer')
@@ -145,7 +130,7 @@ image(1:ncol(y),1:ncol(y),cor(y),col=icolors,zlim=c(-1,1),
        xaxt="n",xlab="",yaxt="n",ylab="")
 axis(2,1:ncol(y),sex,las=2)
 axis(1,1:ncol(y),sex,las=2)
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome.png) 
 
@@ -158,33 +143,24 @@ axis(1,1:ncol(y),sex,las=2)
 下面继续上面的案例，看看效果。
 
 
-```r
+~~~
 # 安装相关软件包sva与limma
 # biocLite(c('sva','limma'))
 # 读取进行替代变量分析与回归的sva跟limma包
 library(limma)
 library(sva)
-```
-
-```
-## Loading required package: mgcv
-## Loading required package: nlme
-## This is mgcv 1.8-7. For overview type 'help("mgcv-package")'.
-```
-
-```r
 # 构建基础模型
 mod <- model.matrix(~sex)
 # 寻找替代变量
 svafit <- sva(geneExpression,mod)
-```
+~~~
 
-```
+~~~
 ## Number of significant surrogate variables is:  5 
 ## Iteration (out of 5 ):1  2  3  4  5
-```
+~~~
 
-```r
+~~~
 # 构建包含替代变量的模型
 svaX<-model.matrix(~sex+svafit$sv)
 # 拟合模型
@@ -203,7 +179,7 @@ image(t(mat),col=icolors,zlim=c(-5,5),xaxt="n",yaxt="n")
 image(t(Signal),col=icolors,zlim=c(-5,5),xaxt="n",yaxt="n")
 image(t(Batch),col=icolors,zlim=c(-5,5),xaxt="n",yaxt="n")
 image(t(error),col=icolors,zlim=c(-5,5),xaxt="n",yaxt="n")
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome1.png) 
 
@@ -220,7 +196,7 @@ image(t(error),col=icolors,zlim=c(-5,5),xaxt="n",yaxt="n")
 你进行了一组技术重复，然后发现两组数据相关性不错，那么是不是数据就可信了？不一定，第一次你测到是1，3，5，7但第二次测到的是10，30，50，70。这种情况相关性非常好，但都差了一个数量级。我们用数据做个演示。
 
 
-```r
+~~~
 # biocLite("SpikeInSubset")
 library(SpikeInSubset)
 # 载入原始数据
@@ -247,21 +223,21 @@ plot(r,g,lwd=2,cex=0.2,pch=16,
      ylab=expression(paste(log[2], " ", E[2])),
      main=paste0("corr=",signif(cor(r,g),3)))
 abline(0,1,col=2,lwd=2)
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome2.png) 
 
 从上面的图中我们可以看出基因组技术重复数据大部分位于低响应区，且数值越小，方差越大。这种情况得到的相关性可能被少数数据所影响，因而我们采用绝对差值与均值做图给出比较。
 
 
-```r
+~~~
 mypar(1,1)
 plot((r+g)/2,(r-g),lwd=2,cex=0.2,pch=16,
      xlab=expression(paste("Ave{ ",log[2], " ", E[1],", ",log[2], " ", E[2]," }")),
      ylab=expression(paste(log[2]," { ",E[1]," / ",E[2]," }")),
      main=paste0("SD=",signif(sqrt(mean((r-g)^2)),3)))
 abline(h=0,col=2,lwd=2)
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome3.png) 
 
@@ -272,29 +248,29 @@ abline(h=0,col=2,lwd=2)
 拿到数据后可以先来个最直观的boxplot异常值检测，出现特别离谱的，多半是有大问题。
 
 
-```r
+~~~
 ge <- geneExpression
 # 伪造一组有问题的数据
 ge[,12] <- ge[,12]/log2(exp(1))
 mypar(1,1)
 # 用boxplot检查
 boxplot(ge,range=0,names=1:ncol(ge),col=ifelse(1:ncol(ge)==42,1,2))
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome4.png) 
 
-```r
+~~~
 # 用matplot绘制分位数曲线
 qs <- t(apply(ge,2,quantile,prob=c(0.05,0.25,0.5,0.75,0.95)))
 matplot(qs,type="l",lty=1)
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome5.png) 
 
-```r
+~~~
 # 绘制平滑直方图
 shist(ge,unit=0.5)
-```
+~~~
 
 ![](http://yufree.github.io/blogcn/figure/genome6.png) 
 
