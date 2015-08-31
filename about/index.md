@@ -23,6 +23,8 @@ layout: page
 
 - [自学笔记](http://yufree.github.io/notes): 亦可参见博客笔记板块 实质等同
 
+- [刷公开课](https://github.com/yufree/MOOC): 计划毕业前刷够42门
+
 - [Github](https://github.com/yufree): 伪码农是我另一个身份
 
 - [知乎专栏](http://zhuanlan.zhihu.com/yufree): 土鳖的论文修养
