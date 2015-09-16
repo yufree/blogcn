@@ -373,8 +373,8 @@ r2tab[,1:2]
 
 OK，这一系列四篇文章只算是一个基因组数据分析的入门，先形成类比思想工作就好展开一些。下面给出一些链接，可深入学习。
 
-- ![Bioconductor上各种数据分析的流程图](http://bioconductor.org/help/workflows/)
+- [Bioconductor上各种数据分析的流程图](http://bioconductor.org/help/workflows/)
 
-- ![Raff教授公开课的开源教材](http://genomicsclass.github.io/book/)
+- [Raff教授公开课的开源教材](http://genomicsclass.github.io/book/)
 
-- ![糗世界 中文教程比较多 实战经验丰富](http://blog.qiuworld.com:8080/)
+- [糗世界 中文教程比较多 实战经验丰富](http://blog.qiuworld.com:8080/)
