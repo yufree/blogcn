@@ -33,10 +33,11 @@ title: 简历
 - 于淼,2014,环境数据的阈值探索, 第二届环境污染与健康研究生论坛(北京). ([幻灯片](http://yufree.github.io/presentation/threshold/threshold))
 - 于淼,2015,单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会(上海).
 - Miao Yu, 2015, Organic Stable Isotope Analysis with GC-qMS for PBDEs in a molecular view, Isotopes 2015(Jerusalem, Israel).
+- 于淼,2015,GC-MS数据可视化在环境分析中的应用,第八届全国环境化学大会(广州).
 
 ## 计算机水平
 
-- 语言(业余)：R > Tex >> Octave > python >> C
+- 语言(业余)：R > Tex > python > Octave >  >> C
 
 - 软件：RStudio, lyx, 终端
 
@@ -89,6 +90,8 @@ title: 简历
 - 于淼, 单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会, 2015, 上海, 中国 (口头报告)
 
 - Miao Yu, Jiyan Liu, Guibin Jiang. 2015, Organic Stable Isotope Analysis with GC-qMS for PBDEs in a molecular view, Isotopes 2015, Jerusalem, Israel (口头报告)
+
+- 于淼,刘稷燕, 江桂斌,GC-MS数据可视化在环境分析中的应用,第八届全国环境化学大会,2015,广州,中国(口头报告)
 
 ## 授权专利
 
