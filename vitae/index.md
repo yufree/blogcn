@@ -55,6 +55,8 @@ title: 简历
 
 - Yu, M., Liu, J., Wang, T., Sun, J., Liu, R., & Jiang, G. (2013). Metabolites of 2,4,4’-tribrominated diphenyl ether (BDE-28) in pumpkin after in vivo and in vitro exposure. Environmental Science & Technology, 47(23), 13494–501. 
 
+- Tian, Y., Yu, M., Chen, J., Liu, C., Shi, J., Chen, H., Jiang, G., (2015). Real Time Online Correction of Mass Shifts and Intensity Fluctuations in Extractive Electrospray Ionization Mass Spectrometry. Anal. Chem. 87, 11962–66. 
+
 - Liu, A., Tian, Y., Yin, N., Yu, M., Qu, G., Shi, J., … Jiang, G. (2015). Characterization of Three Tetrabromobisphenol-S Derivatives in Mollusks from Chinese Bohai Sea: A Strategy for Novel Brominated Contaminants Identification. Scientific reports, 5, 11741.
 
 - Zhang, H., Wang, Y., Sun, C., Yu, M., Gao, Y., Wang, T., … Jiang, G. (2014). Levels and distributions of hexachlorobutadiene and three chlorobenzenes in biosolids from wastewater treatment plants and in soils within and surrounding a chemical plant in China. Environmental Science & Technology, 48(3), 1525–31.
@@ -90,6 +92,8 @@ title: 简历
 - 于淼, 单甲氧基取代多溴联苯醚定性分析方法,中国化学会第十八届全国有机分析及生物分析学术研讨会, 2015, 上海, 中国 (口头报告)
 
 - Miao Yu, Jiyan Liu, Guibin Jiang. 2015, Organic Stable Isotope Analysis with GC-qMS for PBDEs in a molecular view, Isotopes 2015, Jerusalem, Israel (口头报告)
+
+- Miao Yu, Aifeng Liu, Jiyan Liu, Guibin Jiang. 2015, Kow Directed Analysis For Brominated Containment in Environmental Samples, the 43rd Symposium of HPLC and related techniques, Beijing, China
 
 - 于淼,刘稷燕, 江桂斌,GC-MS数据可视化在环境分析中的应用,第八届全国环境化学大会,2015,广州,中国(口头报告)
 
