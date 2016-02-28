@@ -55,6 +55,8 @@ title: 简历
 
 - Yu, M., Liu, J., Wang, T., Sun, J., Liu, R., & Jiang, G. (2013). Metabolites of 2,4,4’-tribrominated diphenyl ether (BDE-28) in pumpkin after in vivo and in vitro exposure. Environmental Science & Technology, 47(23), 13494–501. 
 
+- Yu, M., Liu, J., Wang, T., Zhang, A., Wang, Y., Zhou, Q., Jiang, G., (2016). Structure prediction of methyoxy-polybrominated diphenyl ethers (MeO-PBDEs) through GC–MS analysis of their corresponding PBDEs. Talanta 152, 9–14.
+
 - Tian, Y., Yu, M., Chen, J., Liu, C., Shi, J., Chen, H., Jiang, G., (2015). Real Time Online Correction of Mass Shifts and Intensity Fluctuations in Extractive Electrospray Ionization Mass Spectrometry. Anal. Chem. 87, 11962–66. 
 
 - Liu, A., Tian, Y., Yin, N., Yu, M., Qu, G., Shi, J., … Jiang, G. (2015). Characterization of Three Tetrabromobisphenol-S Derivatives in Mollusks from Chinese Bohai Sea: A Strategy for Novel Brominated Contaminants Identification. Scientific reports, 5, 11741.
