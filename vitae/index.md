@@ -23,10 +23,6 @@ title: 简历
 
 持久性有机污染物, 环境过程, 非目的检测, 稳定同位素分析, 数据科学
 
-## 工作经历
-
-- 2014年9月至2015年12月 美国化学会(ACS) 初级分析师（兼职）
-
 ## 报告
 
 - 于淼,2014,多溴联苯醚气相色谱保留时间的模型预测与选择, 第十届全国生物医药色谱及相关技术学术交流会(威海).([幻灯片](https://github.com/yufree/presentation/blob/master/20140420weihai.pdf),[shinyBDE](https://github.com/yufree/shinyBDE))
@@ -57,7 +53,7 @@ title: 简历
 
 - Yu, M., Liu, J., Wang, T., Zhang, A., Wang, Y., Zhou, Q., Jiang, G., (2016). Structure prediction of methyoxy-polybrominated diphenyl ethers (MeO-PBDEs) through GC–MS analysis of their corresponding PBDEs. Talanta 152, 9–14.
 
-- Tian, Y., Yu, M., Chen, J., Liu, C., Shi, J., Chen, H., Jiang, G., (2015). Real Time Online Correction of Mass Shifts and Intensity Fluctuations in Extractive Electrospray Ionization Mass Spectrometry. Anal. Chem. 87, 11962–66. 
+- Tian, Y., Yu, M., Chen, J., Liu, C., Shi, J., Chen, H., Jiang, G., (2015). Real Time Online Correction of Mass Shifts and Intensity Fluctuations in Extractive Electrospray Ionization Mass Spectrometry. Analytical Chemistry 87, 11962–66. 
 
 - Liu, A., Tian, Y., Yin, N., Yu, M., Qu, G., Shi, J., … Jiang, G. (2015). Characterization of Three Tetrabromobisphenol-S Derivatives in Mollusks from Chinese Bohai Sea: A Strategy for Novel Brominated Contaminants Identification. Scientific reports, 5, 11741.
 
@@ -101,11 +97,11 @@ title: 简历
 
 ## 授权专利
 
-### 实用新型（过期）
+### 实用新型
 
 - [高效率太阳能供电器](https://www.google.com.hk/patents/CN201004609Y) 第一发明人
 
-### 发明（说实话，细节忘了）
+### 发明
 
 - [氯化锌改性赤泥的制备方法](http://www.google.com.hk/patents/CN101559353B) 第三发明人
 
