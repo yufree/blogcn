@@ -55,7 +55,7 @@ title: 无学位加拿大博后工作签流程与注意事项
 
 > Dear Sir/Madam,
 
-> After I graduated from Shandong University, I went to University of Chinese Academy of Sciences(UCAS) and studies as PhD student till now. I never worked as employee in China and have no employment records, current employer or past employer. I think my salary in the offer ($X/year) is enough to live in Canada. Besides I got increasing subsidy from UCAS as student from 2010(around $X/year) to now(around $X/year).
+> After I graduated from Shandong University, I went to University of X and studies as PhD student till now. I never worked as employee in China and have no employment records, current employer or past employer. I think my salary in the offer ($X/year) is enough to live in Canada. Besides I got increasing subsidy from X as student from 2010(around $X/year) to now(around $X/year).
 
 > Thanks,
 
@@ -76,9 +76,9 @@ title: 无学位加拿大博后工作签流程与注意事项
 
 > - Proof that you Meet the Requirements of the Job Being Offered
 
-> My offer is conditioned on a PhD degree while I would defend my PhD degree at May 2016 and could not get the formal degree before the middle of the July according to the convention. However, my postdoctoral fellow research would begin at August 2016 due to the offer. According to C44, I attached the certification from the students affairs office of University of Chinese Academy of Science to prove I am currently a student and I have completed the requirement of PhD degree.
+> My offer is conditioned on a PhD degree while I would defend my PhD degree at May 2016 and could not get the formal degree before the middle of the July according to the convention. However, my postdoctoral fellow research would begin at August 2016 due to the offer. According to C44, I attached the certification from the students affairs office of University of X to prove I am currently a student and I have completed the requirement of PhD degree.
 
-> I also attached the transcript of my academic record in the University of Chinese Academy of Sciences and three recommendations to prove my capability for the research of postdoctoral fellow in Canada as shown in the research proposal. Also such capability could be checked by my publications in CV.
+> I also attached the transcript of my academic record in the University of X and three recommendations to prove my capability for the research of postdoctoral fellow in Canada as shown in the research proposal. Also such capability could be checked by my publications in CV.
 
 > - Employment Reference Letter
 
@@ -86,16 +86,16 @@ title: 无学位加拿大博后工作签流程与注意事项
 
 > - Letter from Current Employer
 
-> After I graduated from Shandong University, I went to University of Chinese Academy of
-Sciences(UCAS) and studies as a full-time student till now. I never worked as employee in China
+> After I graduated from X University, I went to University of X and studies as a full-time student till now. I never worked as employee in China
 and have no employment records, current employer or past employer. I think my salary in the offer
-($X/year) is enough to live in Canada. Besides I got increasing subsidy from UCAS as student
+($X/year) is enough to live in Canada. Besides I got increasing subsidy from X as student
 from 2010(around $X/year) to now(around $X/year).
 
 > - Education (diplomas/degrees)
 
-> I submit the verification report of study record in Shandong University and University of Chinese Academy of Sciences(UCAS) along with the the scanned original document of my diplomas in Shandong University. I also submit the verification report of my Bachelor of Science and the scanned original document. Besides, I attached certification from the students affairs office of University of Chinese Academy of Science.
-To make it clear, my study in UCAS is actually a MD-PhD program, so I had a master study record but no master degree. Also the study record of the master said the Status of Student Record is “Transfered”. Meanwhile, Research Center for Eco-Environmental Sciences is the institute that take responsibility for my MD-PhD program for UCAS.
+> I submit the verification report of study record in X University and University of X along with the the scanned original document of my diplomas in X. I also submit the verification report of my Bachelor of Science and the scanned original document. Besides, I attached certification from the students affairs office of University of X.
+
+> To make it clear, my study in X is actually a MD-PhD program, so I had a master study record but no master degree. Also the study record of the master said the Status of Student Record is “Transfered”. 
 
 > - IMM5802 Offer of Employment to a Foreign National LMIA-Exempt
 
