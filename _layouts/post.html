@@ -5,14 +5,12 @@ layout: default
 <section class="post">
 {{ content }}
 </section>
+
 <section class="meta">
-路过<span data-hk-page="current"> - </span>人
-<span class="author">
-  <a href="http://yufree.github.com/blogcn">{{ site.author }}</a>
+  <span class="time">
+  自<time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>路过
 </span>
-<span class="time">
-  <time datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date:"%Y-%m-%d" }}</time>
-</span>
+<span data-hk-page="current"> - </span> 人
 <br />
 <span class="license">
   Published under <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/">(CC) BY-NC-SA</a>
