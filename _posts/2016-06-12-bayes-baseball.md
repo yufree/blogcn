@@ -3,8 +3,6 @@ layout: post
 title: 贝叶斯棒球
 ---
 
-
-
 最近看到一系列以棒球为主题的关于贝叶斯分析的[文章](http://varianceexplained.org/posts/)，赶忙总结了一下，省的忘了。我非常喜欢这类通过实际案例来进行分析的讲解方法，很容易举一反三。
 
 ## 什么是贝塔分布？
@@ -79,7 +77,6 @@ $$\frac{a}{b} = \frac{c}{d} = \frac{a+b}{c+d}$$
 
 
 ```r
-library(knitr)
 library(dplyr)
 library(tidyr)
 library(Lahman)
@@ -96,35 +93,27 @@ career <- Master %>%
   tbl_df() %>%
   select(playerID, nameFirst, nameLast) %>%
   unite(name, nameFirst, nameLast, sep = " ") %>%
-  inner_join(career, by = "playerID") %>%
-  select(-playerID)
-```
-
-```
-## Error in select(., playerID, nameFirst, nameLast): unused arguments (playerID, nameFirst, nameLast)
-```
-
-```r
+  inner_join(career, by = "playerID")
 # 展示数据
 career
 ```
 
 ```
-## Source: local data frame [9,342 x 4]
+## Source: local data frame [9,342 x 5]
 ## 
-##     playerID     H    AB average
-##        (chr) (int) (int)   (dbl)
-## 1  aaronha01  3771 12364  0.3050
-## 2  aaronto01   216   944  0.2288
-## 3   abadan01     2    21  0.0952
-## 4  abadijo01    11    49  0.2245
-## 5  abbated01   772  3044  0.2536
-## 6  abbotfr01   107   513  0.2086
-## 7  abbotje01   157   596  0.2634
-## 8  abbotku01   523  2044  0.2559
-## 9  abbotod01    13    70  0.1857
-## 10 abercda01     0     4  0.0000
-## ..       ...   ...   ...     ...
+##     playerID              name     H    AB average
+##        (chr)             (chr) (int) (int)   (dbl)
+## 1  aaronha01        Hank Aaron  3771 12364  0.3050
+## 2  aaronto01      Tommie Aaron   216   944  0.2288
+## 3   abadan01         Andy Abad     2    21  0.0952
+## 4  abadijo01       John Abadie    11    49  0.2245
+## 5  abbated01    Ed Abbaticchio   772  3044  0.2536
+## 6  abbotfr01       Fred Abbott   107   513  0.2086
+## 7  abbotje01       Jeff Abbott   157   596  0.2634
+## 8  abbotku01       Kurt Abbott   523  2044  0.2559
+## 9  abbotod01        Ody Abbott    13    70  0.1857
+## 10 abercda01 Frank Abercrombie     0     4  0.0000
+## ..       ...               ...   ...   ...     ...
 ```
 
 ```r
@@ -137,13 +126,13 @@ career %>%
 
 
 
-|playerID  |  H| AB| average|
-|:---------|--:|--:|-------:|
-|banisje01 |  1|  1|       1|
-|bassdo01  |  1|  1|       1|
-|birasst01 |  2|  2|       1|
-|burnscb01 |  1|  1|       1|
-|gallaja01 |  1|  1|       1|
+|playerID  |name             |  H| AB| average|
+|:---------|:----------------|--:|--:|-------:|
+|banisje01 |Jeff Banister    |  1|  1|       1|
+|bassdo01  |Doc Bass         |  1|  1|       1|
+|birasst01 |Steve Biras      |  2|  2|       1|
+|burnscb01 |C. B. Burns      |  1|  1|       1|
+|gallaja01 |Jackie Gallagher |  1|  1|       1|
 
 ```r
 # 击球后5
@@ -155,13 +144,13 @@ career %>%
 
 
 
-|playerID  |  H| AB| average|
-|:---------|--:|--:|-------:|
-|abercda01 |  0|  4|       0|
-|adamsla01 |  0|  3|       0|
-|allenho01 |  0|  7|       0|
-|allenpe01 |  0|  4|       0|
-|alstowa01 |  0|  1|       0|
+|playerID  |name              |  H| AB| average|
+|:---------|:-----------------|--:|--:|-------:|
+|abercda01 |Frank Abercrombie |  0|  4|       0|
+|adamsla01 |Lane Adams        |  0|  3|       0|
+|allenho01 |Horace Allen      |  0|  7|       0|
+|allenpe01 |Pete Allen        |  0|  4|       0|
+|alstowa01 |Walter Alston     |  0|  1|       0|
 
 如果仅考虑击球率会把很多板凳球员与运气球员包括进来，一个先验概率分布很有必要。那么考虑下如何得到，经验贝叶斯方法认为如果估计一个个体的参数，那么这个个体所在的整体的概率分布可作为先验概率分布。这个先验概率分布可以直接从数据的整体中得到，然后我们要用极大似然或矩估计的方法拿到贝塔分布的两个参数：
 
@@ -202,13 +191,13 @@ career_eb %>%
 
 
 
-|playerID  |    H|   AB| average| eb_estimate|
-|:---------|----:|----:|-------:|-----------:|
-|hornsro01 | 2930| 8173|   0.358|       0.355|
-|jacksjo01 | 1772| 4981|   0.356|       0.350|
-|delahed01 | 2596| 7505|   0.346|       0.343|
-|hamilbi01 | 2158| 6268|   0.344|       0.340|
-|heilmha01 | 2660| 7787|   0.342|       0.338|
+|playerID  |name                 |    H|   AB| average| eb_estimate|
+|:---------|:--------------------|----:|----:|-------:|-----------:|
+|hornsro01 |Rogers Hornsby       | 2930| 8173|   0.358|       0.355|
+|jacksjo01 |Shoeless Joe Jackson | 1772| 4981|   0.356|       0.350|
+|delahed01 |Ed Delahanty         | 2596| 7505|   0.346|       0.343|
+|hamilbi01 |Billy Hamilton       | 2158| 6268|   0.344|       0.340|
+|heilmha01 |Harry Heilmann       | 2660| 7787|   0.342|       0.338|
 
 ```r
 # 击球率低
@@ -220,13 +209,13 @@ career_eb %>%
 
 
 
-|playerID  |   H|   AB| average| eb_estimate|
-|:---------|---:|----:|-------:|-----------:|
-|bergebi01 | 516| 3028|   0.170|       0.179|
-|oylerra01 | 221| 1265|   0.175|       0.191|
-|vukovjo01 |  90|  559|   0.161|       0.196|
-|humphjo01 |  52|  364|   0.143|       0.196|
-|bakerge01 |  74|  474|   0.156|       0.196|
+|playerID  |name           |   H|   AB| average| eb_estimate|
+|:---------|:--------------|---:|----:|-------:|-----------:|
+|bergebi01 |Bill Bergen    | 516| 3028|   0.170|       0.179|
+|oylerra01 |Ray Oyler      | 221| 1265|   0.175|       0.191|
+|vukovjo01 |John Vukovich  |  90|  559|   0.161|       0.196|
+|humphjo01 |John Humphries |  52|  364|   0.143|       0.196|
+|bakerge01 |George Baker   |  74|  474|   0.156|       0.196|
 
 ```r
 # 整体估计
@@ -250,25 +239,6 @@ ggplot(career_eb, aes(average, eb_estimate, color = AB)) +
 
 ```r
 # 给出后验分布
-career <- Batting %>%
-  filter(AB > 0) %>%
-  anti_join(Pitching, by = "playerID") %>%
-  group_by(playerID) %>%
-  summarize(H = sum(H), AB = sum(AB)) %>%
-  mutate(average = H / AB)
-
-career <- Master %>%
-  tbl_df() %>%
-  select(playerID, nameFirst, nameLast) %>%
-  unite(name, nameFirst, nameLast, sep = " ") %>%
-  inner_join(career, by = "playerID")
-```
-
-```
-## Error in select(., playerID, nameFirst, nameLast): unused arguments (playerID, nameFirst, nameLast)
-```
-
-```r
 career_eb <- career %>%
     mutate(eb_estimate = (H + alpha0) / (AB + alpha0 + beta0))
 career_eb <- career_eb %>%
@@ -293,9 +263,7 @@ ggplot(yankee_beta, aes(x, density, color = name)) +
                   lty = 2, color = "black")
 ```
 
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
+![plot of chunk ci](http://yufree.github.io/blogcn/figure/ci-1.png)
 
 ```r
 # 提取可信区间
@@ -307,9 +275,17 @@ yankee_1998_career %>%
     knitr::kable()
 ```
 
-```
-## Error in select(., -alpha1, -beta1, -eb_estimate): unused arguments (-alpha1, -beta1, -eb_estimate)
-```
+
+
+|playerID  |name              |    H|    AB| average|   low|  high|
+|:---------|:-----------------|----:|-----:|-------:|-----:|-----:|
+|brosisc01 |Scott Brosius     | 1001|  3889|   0.257| 0.244| 0.271|
+|jeterde01 |Derek Jeter       | 3465| 11195|   0.310| 0.300| 0.317|
+|knoblch01 |Chuck Knoblauch   | 1839|  6366|   0.289| 0.277| 0.298|
+|martiti02 |Tino Martinez     | 1925|  7111|   0.271| 0.260| 0.280|
+|posadjo01 |Jorge Posada      | 1664|  6092|   0.273| 0.262| 0.283|
+|strawda01 |Darryl Strawberry | 1401|  5418|   0.259| 0.247| 0.270|
+|willibe02 |Bernie Williams   | 2336|  7869|   0.297| 0.286| 0.305|
 
 ```r
 # 绘制可信区间
@@ -323,9 +299,7 @@ yankee_1998_career %>%
     ylab("Player")
 ```
 
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
+![plot of chunk ci](http://yufree.github.io/blogcn/figure/ci-2.png)
 
 ```r
 # 对比置信区间与可信区间
@@ -338,36 +312,18 @@ set.seed(2016)
 some <- career_eb %>%
     sample_n(20) %>%
     mutate(name = paste0(name, " (", H, "/", AB, ")"))
-```
 
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
-
-```r
 frequentist <- some %>%
     group_by(playerID, name, AB) %>%
     do(tidy(binom.test(.$H, .$AB))) %>%
     select(playerID, name, estimate, low = conf.low, high = conf.high) %>%
     mutate(method = "Confidence")
-```
 
-```
-## Error in select(., playerID, name, estimate, low = conf.low, high = conf.high): unused arguments (playerID, name, estimate, low = conf.low, high = conf.high)
-```
-
-```r
 bayesian <- some %>%
     select(playerID, name, AB, estimate = eb_estimate,
            low = low, high = high) %>%
     mutate(method = "Credible")
-```
 
-```
-## Error in select(., playerID, name, AB, estimate = eb_estimate, low = low, : unused arguments (playerID, name, AB, estimate = eb_estimate, low = low, high = high)
-```
-
-```r
 combined <- bind_rows(frequentist, bayesian)
 
 combined %>%
@@ -381,7 +337,7 @@ combined %>%
     labs(color = "")
 ```
 
-![plot of chunk ci](http://yufree.github.io/blogcn/figure/ci-1.png)
+![plot of chunk ci](http://yufree.github.io/blogcn/figure/ci-3.png)
 
 可信区间与置信区间（二项式比例估计）很大的区别在于前者考虑了先验概率进而实现了区间的收缩，后者则可看作无先验贝塔分布给出的区间估计，频率学派目前没有很好的收缩区间估计的方法。
 
@@ -403,9 +359,7 @@ career_eb %>%
     geom_vline(color = "red", lty = 2, xintercept = .3)
 ```
 
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
+![plot of chunk lp](http://yufree.github.io/blogcn/figure/lp-1.png)
 
 ```r
 # 提取该球员数据
@@ -413,7 +367,12 @@ career_eb %>% filter(name == "Hank Aaron")
 ```
 
 ```
-## Error in eval(expr, envir, enclos): object 'name' not found
+## Source: local data frame [1 x 10]
+## 
+##    playerID       name     H    AB average eb_estimate alpha1 beta1   low
+##       (chr)      (chr) (int) (int)   (dbl)       (dbl)  (dbl) (dbl) (dbl)
+## 1 aaronha01 Hank Aaron  3771 12364   0.305       0.304   3850  8819 0.296
+## Variables not shown: high (dbl)
 ```
 
 ```r
@@ -556,9 +515,7 @@ career_eb %>%
   labs(x = "Batting average", color = "")
 ```
 
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
+![plot of chunk ht](http://yufree.github.io/blogcn/figure/ht-1.png)
 
 如果两个球员击球率的概率密度曲线比较接近，那么即便均值有不同我们也无法进行区分；如果重叠比较少，那么我们有理由认为他们之间的差异显著。那么贝叶斯视角下如何定量描述这个差异是否显著？
 
@@ -570,21 +527,7 @@ career_eb %>%
 ```r
 # 提取两人数据
 aaron <- career_eb %>% filter(name == "Hank Aaron")
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
-
-```r
 piazza <- career_eb %>% filter(name == "Mike Piazza")
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
-
-```r
 # 模拟取样10万次
 piazza_simulation <- rbeta(1e6, piazza$alpha1, piazza$beta1)
 aaron_simulation <- rbeta(1e6, aaron$alpha1, aaron$beta1)
@@ -749,13 +692,6 @@ intervals <- career_eb %>%
   do(credible_interval_approx(piazza$alpha1, piazza$beta1, .$alpha1, .$beta1)) %>%
   ungroup() %>%
   mutate(name = reorder(paste0(name, " (", H, " / ", AB, ")"), -estimate))
-```
-
-```
-## Error in eval(expr, envir, enclos): unknown column 'name'
-```
-
-```r
 f <- function(H, AB) broom::tidy(prop.test(c(H, piazza$H), c(AB, piazza$AB)))
 prop_tests <- purrr::map2_df(intervals$H, intervals$AB, f) %>%
   mutate(estimate = estimate1 - estimate2,
@@ -789,32 +725,26 @@ career_eb_vs_piazza <- bind_cols(
   credible_interval_approx(piazza$alpha1, piazza$beta1,
                            career_eb$alpha1, career_eb$beta1)) %>%
   select(name, posterior, conf.low, conf.high)
-```
 
-```
-## Error in select(., name, posterior, conf.low, conf.high): unused arguments (name, posterior, conf.low, conf.high)
-```
-
-```r
 career_eb_vs_piazza
 ```
 
 ```
-## Source: local data frame [9,342 x 5]
+## Source: local data frame [9,342 x 4]
 ## 
-##                    name posterior conf.low conf.high   qvalue
-##                   (chr)     (dbl)    (dbl)     (dbl)    (dbl)
-## 1        Rogers Hornsby  2.84e-11   0.0345    0.0639 2.84e-11
-## 2  Shoeless Joe Jackson  8.77e-08   0.0278    0.0611 4.39e-08
-## 3          Ed Delahanty  7.10e-07   0.0218    0.0518 2.66e-07
-## 4         Willie Keeler  4.62e-06   0.0183    0.0472 1.36e-06
-## 5        Billy Hamilton  7.03e-06   0.0190    0.0502 2.49e-06
-## 6        Harry Heilmann  7.19e-06   0.0180    0.0476 3.27e-06
-## 7            Lou Gehrig  1.43e-05   0.0167    0.0461 4.85e-06
-## 8            Nap Lajoie  1.62e-05   0.0158    0.0441 6.28e-06
-## 9            Tony Gwynn  1.83e-05   0.0157    0.0442 7.62e-06
-## 10           Bill Terry  3.03e-05   0.0162    0.0472 9.89e-06
-## ..                  ...       ...      ...       ...      ...
+##                    name posterior conf.low conf.high
+##                   (chr)     (dbl)    (dbl)     (dbl)
+## 1        Rogers Hornsby  2.84e-11   0.0345    0.0639
+## 2          Ed Delahanty  7.10e-07   0.0218    0.0518
+## 3  Shoeless Joe Jackson  8.77e-08   0.0278    0.0611
+## 4         Willie Keeler  4.62e-06   0.0183    0.0472
+## 5            Nap Lajoie  1.62e-05   0.0158    0.0441
+## 6            Tony Gwynn  1.83e-05   0.0157    0.0442
+## 7        Harry Heilmann  7.19e-06   0.0180    0.0476
+## 8            Lou Gehrig  1.43e-05   0.0167    0.0461
+## 9        Billy Hamilton  7.03e-06   0.0190    0.0502
+## 10        Eddie Collins  2.00e-04   0.0113    0.0393
+## ..                  ...       ...      ...       ...
 ```
 
 ```r
@@ -969,13 +899,6 @@ career_eb_wAB <- career_eb %>%
          alpha1 = alpha0 + H,
          beta1 = beta0 + AB - H,
          new_eb = alpha1 / (alpha1 + beta1))
-```
-
-```
-## Error in eval(expr, envir, enclos): object 'name' not found
-```
-
-```r
 # 展示拟合后的击球率
 ggplot(career_eb_wAB, aes(original_eb, new_eb, color = AB)) +
   geom_point() +
