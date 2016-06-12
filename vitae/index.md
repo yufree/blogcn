@@ -50,16 +50,27 @@ title: 简历
 ## 论文
 
 - YU M, LIU J, WANG T, SUN J, LIU R, JIANG G. Metabolites of 2,4,4'-tribrominated diphenyl ether (BDE-28) in pumpkin after in vivo and in vitro exposure [J]. Environ Sci Technol, 2013, 47(23): 13494-501.
+
 - YU M, LIU J, WANG T, ZHANG A, WANG Y, ZHOU Q, JIANG G. Structure prediction of methyoxy-polybrominated diphenyl ethers (MeO-PBDEs) through GC-MS analysis of their corresponding PBDEs [J]. Talanta, 2016, 152(9-14).
+
 - TIAN Y, YU M, CHEN J, LIU C, SHI J, CHEN H, JIANG G. Real Time Online Correction of Mass Shifts and Intensity Fluctuations in Extractive Electrospray Ionization Mass Spectrometry [J]. Anal Chem, 2015, 87(24): 11962-6.
+
 - LIU A, QU G, YU M, LIU Y, SHI J, JIANG G. Tetrabromobisphenol-A/S and Nine Novel Analogs in Biological Samples from the Chinese Bohai Sea: Implications for Trophic Transfer [J]. Environ Sci Technol, 2016, 50(8): 4203-11.
+
 - SUN J, LIU J, YU M, WANG C, SUN Y, ZHANG A, WANG T, LEI Z, JIANG G. In vivo metabolism of 2,2',4,4'-tetrabromodiphenyl ether (BDE-47) in young whole pumpkin plant [J]. Environ Sci Technol, 2013, 47(8): 3701-7.
+
 - LIU A, TIAN Y, YIN N, YU M, QU G, SHI J, DU Y, JIANG G. Characterization of Three Tetrabromobisphenol-S Derivatives in Mollusks from Chinese Bohai Sea: A Strategy for Novel Brominated Contaminants Identification [J]. Sci Rep, 2015, 5:11741.
+
 - ZHANG H, WANG Y, SUN C, YU M, GAO Y, WANG T, LIU J, JIANG G. Levels and distributions of hexachlorobutadiene and three chlorobenzenes in biosolids from wastewater treatment plants and in soils within and surrounding a chemical plant in China [J]. Environ Sci Technol, 2014, 48(3): 1525-31.
+
 - SUN J, LIU J, LIU Y, YU M, JIANG G. Reciprocal Transformation between Hydroxylated and Methoxylated Polybrominated Diphenyl Ethers in Young Whole Pumpkin Plants [J]. Environ Sci Technol Lett, 2014, 1(4): 236-41.
+
 - LIU Q, CHENG M, LONG Y, YU M, WANG T, JIANG G. Graphenized pencil lead fiber: facile preparation and application in solid-phase microextraction [J]. J Chromatogr A, 2014, 1325:1-7.
+
 - SUN J, LIU J, LIU Q, RUAN T, YU M, WANG Y, WANG T, JIANG G. Hydroxylated polybrominated diphenyl ethers (OH-PBDEs) in biosolids from municipal wastewater treatment plants in China [J]. Chemosphere, 2013, 90(9): 2388-95.
+
 - LIU R, RUAN T, WANG T, SONG S, YU M, GAO Y, SHAO J, JIANG G. Trace analysis of mono-, di-, tri-substituted polyfluoroalkyl phosphates and perfluorinated phosphonic acids in sewage sludge by high performance liquid chromatography tandem mass spectrometry [J]. Talanta, 2013, 111:170-7.
+
 - QU G, LIU A, WANG T, ZHANG C, FU J, YU M, SUN J, ZHU N, LI Z, WEI G, DU Y, SHI J, LIU S, JIANG G. Identification of tetrabromobisphenol A allyl ether and tetrabromobisphenol A 2,3-dibromopropyl ether in the ambient environment near a manufacturing site and in mollusks at a coastal region [J]. Environ Sci Technol, 2013, 47(9): 4760-7.
 
 ## 软件包
