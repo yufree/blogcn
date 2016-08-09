@@ -3,7 +3,7 @@ title: 关于我
 layout: page
 ---
 
-中科院在读博士一枚，路盲，脸盲并伴有间歇性健忘，各方面都在建设中……
+枫叶国水卢村办大学博士后一枚，路盲，脸盲并伴有间歇性健忘，各方面都在建设中……
 
 - [谢益辉](http://yihui.name): 博客风格从这里抄的
 
@@ -15,7 +15,7 @@ layout: page
 
 - [ResearchGate](https://www.researchgate.net/profile/Miao_Yu21): 追随导师的脚步
 
-- [linkedin](https://www.linkedin.com/in/yufree): 要是按期毕业就去找个博后
+- [linkedin](https://www.linkedin.com/in/yufree): 我毕业了！！！
 
 ---
 
