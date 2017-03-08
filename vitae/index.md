@@ -67,6 +67,8 @@ Waterloo, Ontario, Canada
 
 - TIAN Y, YU M, CHEN J, LIU C, SHI J, CHEN H, JIANG G. Real Time Online Correction of Mass Shifts and Intensity Fluctuations in Extractive Electrospray Ionization Mass Spectrometry [J]. Anal Chem, 2015, 87(24): 11962-6.
 
+- Li Y, Hou X, Yu M, Zhou Q, Liu J, Schnoor JL, Jiang G. Dechlorination and chlorine rearrangement of 1, 2, 5, 5, 6, 9, 10-heptachlorodecane mediated by the whole pumpkin seedlings[J]. Environmental Pollution, 2017
+
 - CHI X, LIU J, YU M, Xie Z, Jiang G. Analysis of bromophenols in various aqueous samples using solid phase extraction followed by HPLC-MS/MS, Talanta, 2017, 164(57-63).
 
 - LIU A, QU G, YU M, LIU Y, SHI J, JIANG G. Tetrabromobisphenol-A/S and Nine Novel Analogs in Biological Samples from the Chinese Bohai Sea: Implications for Trophic Transfer [J]. Environ Sci Technol, 2016, 50(8): 4203-11.
